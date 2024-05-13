@@ -2,7 +2,7 @@
 
 - ## Sasha
 
-[Sasha's Mockup link]()
+[Sasha's Mockup link](https://www.figma.com/file/MyTQDkorRpS8vI5MVAvrrZ/Untitled?type=design&node-id=0%3A1&mode=design&t=Zonn9gOtumvZpBXK-1)
 
 - ## Joel
 
