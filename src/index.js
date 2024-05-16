@@ -1,5 +1,7 @@
 import { getData, getPosts } from "./js/services/posts.service.js"
 
+import { nav } from "src/components/Nav.js"
+
 // Creating a Promise (You'll do this not often/rarely)
 
 // Using a Promise (Often)
