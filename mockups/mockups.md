@@ -14,5 +14,4 @@
 
 - ## Daniel
 
-[Daniel's Mockup link](https://www.figma.com/file/OO47z6UFzmnsB5zH1I257C/Untitled?type=design&node-id=0%3A1&mode=design&t=RbPKvCUtZYRd6D9Y-1)
-
+[Daniel's Mockup link]
