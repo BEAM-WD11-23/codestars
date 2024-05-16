@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="../../components/Nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script defer src="./profile.js"></script>
+    <script defer src="../../components/Nav.js"></script>
+</head>
+<body>
+    <main class="Profile__main">
+        <header class="Profile___header"></header>
+        <div class="Profile__content">
+            <section class="Profile__content__imgBlock">
+                <div class="Profile__backgroundImg">
+                    <div class="Profile__EditBtn EditBtn__backgroundImg">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+                <div class="Profile__img">
+                    <div class="Profile__EditBtn EditBtn__profileImg">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+            </section>
+            <section class="Profile__content__btnBlock">
+                <div class="Profile__BigBtn"><p>New Post</p><i class="fa-solid fa-circle-plus"></i></div>
+                <div class="Profile__BigBtn"><p>Edit Profile</p><i class="fa-solid fa-pencil"></i></div>
+            </section>
+            <section class="Profile__content__postsBlock"></section>
+        </div>
+        <nav class="Profile__nav">
+            <section class="navigation">
+                <ul class="nav">
+                    <span class="nav-indicator"></span>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-home'></i>
+                            <span class="title">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-search-alt-2'></i>
+                            <span class="title">Search</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item-active">
+                            <i class='bx bx-plus-circle'></i>
+                            <span class="title"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-message-square-dots'></i>
+                            <span class="title">Messages</span>
+                            <span class="notification-bubble notification-bubble-messages">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-bell'></i>
+                            <span class="title">Notifications</span>
+                            <span class="notification-bubble notification-bubble-notification">3</span>
+                        </a>
+                    </li>
+                </ul>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filter-svg">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+            </section>
+        </nav>
+    </main>
+</body>
+</html>
