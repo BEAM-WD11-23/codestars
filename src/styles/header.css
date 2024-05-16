@@ -2,14 +2,15 @@ body{
     background-color: rgb(255, 255, 255);
 }
 header{
-    background-color: rgb(226, 228, 232);
-    width: 350px;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 150px;
     border: 1px solid white;
     padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 .main-container {
     width: 100%;
@@ -46,7 +47,7 @@ header{
     position: relative;
     display: flex;
     border-radius: 45px;
-    background-color: #4c5eff;
+    background-color: #513ae776;
     width: 20em;
     height: 3em;
     color: rgb(0, 0, 0);
@@ -74,7 +75,7 @@ header{
     width: 180px; 
     z-index: 1;
     border-radius: 45px;
-    transition: all 0.85s cubic-bezier(0.28, -0.55, 0.265, 1.55);
+    transition: all 1s cubic-bezier(0.28, -0.55, 0.265, 1.55);
     transform-origin: left;
 }
 
