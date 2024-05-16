@@ -57,6 +57,11 @@ ul{
     width: 50px;
 }
 
+.profileImg {
+    display: flex;
+    align-items: center;
+}
+
 
 
 .username {
