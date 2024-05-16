@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/BEAM-WD11-23/codestars/issues"
   },
-  "homepage": "https://github.com/BEAM-WD11-23/codestars#readme"
+  "homepage": "https://github.com/BEAM-WD11-23/codestars#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3"
+  }
 }
