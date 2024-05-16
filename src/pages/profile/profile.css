@@ -27,7 +27,7 @@
 }
 
 .Profile__content__imgBlock{
-    display: block;
+    display: flex;
     position: relative;
     background-color: transparent;
 }
@@ -35,8 +35,8 @@
 
 .Profile__backgroundImg{
     position: relative;
-    width: 100%;
-    min-height: 150px;
+    flex-basis: 100%;
+    min-height: 8em;
     background-image: url(../../sasha_assets/IMG_7627.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,21 +52,21 @@
     background-color: lightgray;
     color: rgb(29, 28, 28);
     backdrop-filter: blur(10px);
-    padding: 2px;
-    height: 20px;
-    width: 20px;
-    border: 1px solid white;
+    padding: 0.6em;
+    height: 1.5em;
+    width: 1.5em;
+    border: 2px solid white;
     border-radius: 100vh;
 }
 
 .EditBtn__backgroundImg{
-    top: 113px;
+    top: 95px;
     right: 10px;
 }
 
 .EditBtn__profileImg{
-    top: 80px;
-    left: 70px;
+    top: 75px;
+    left: 85px;
 }
 
 .Profile__img{
@@ -74,8 +74,8 @@
     position: absolute;
     top: 80px;
     left: 30px;
-    height: 100px;
-    width: 100px;
+    height: 7em;
+    width: 7em;
     border: 2px solid white;
     border-radius: 100vh;
     margin: 0;
