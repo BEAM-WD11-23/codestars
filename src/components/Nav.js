@@ -1,4 +1,4 @@
-export let nav = document.querySelector('.nav');
+let nav = document.querySelector('.nav');
 
 nav.querySelectorAll('li a').forEach((a, i) => {
     a.onclick = (e) => {
