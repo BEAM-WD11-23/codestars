@@ -10,18 +10,20 @@ body {
 .cardContainer {
     display: flex;
     flex-direction: column;
-    background-color: burlywood;
+    /* background-color: burlywood; */
     padding: 5px;
     border: 2px solid;
     border-radius: 5px;
+    margin: 2px;
 
     overflow: hidden; 
 }
 
 /* Header and footer styles */
-header,
+.header,
 footer {
-    background-color: dodgerblue;
+    display: flex;
+    /* background-color: dodgerblue; */
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
@@ -34,7 +36,8 @@ footer {
     height: 50px;
     width: 50px;
     border-radius: 50%; 
-    background-color: aqua;
+    background-color: white;
+    border: 2px solid #C9C9C9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +49,54 @@ ul{
     margin: 0; 
 }
 
-header img,
+.header img {
+    border-radius: 50%;
+    object-fit:cover;
+    contain:inherit;
+    height: 50px;
+    width: 50px;
+}
+
+
+
+.username {
+    margin-left: .5em;   
+  }
+  
+  .header img {
+    flex: 0 0 auto;
+  }
+  
+
+/* Main content styles */
+.mainContainer {
+    flex: 1; /* Allow main content to fill remaining space */
+    padding: 1.2em 1.2em;
+    margin-right: 2em;
+    margin-left: 2em;
+    border: 3px solid;
+    border: 2px solid black;
+    border-radius: 20px;
+
+}
+.postImgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    
+}
+
+.postImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    max-width: 100%;
+    border: 2px solid black;
+    border-radius: 20px; 
+}
+
 footer button img {
     width: 40px; 
     height: 40px; 
@@ -60,26 +110,33 @@ footer button {
 
 
 footer {
-    border: 2px solid;
+    display: flex;
+    justify-content:space-evenly;
+    /* border: 2px solid; */
     align-items: center;
 }
 
 footer button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-left: 30px;
     background: none;
+    color: white;
+    background-color: #416ABB;
+    height: 2em;
+    width: 2em;
     border: none; 
-    padding: auto;
     cursor: pointer; 
+    font-size: 1.2em;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+
 }
 
 footer button:hover {
     opacity: 0.8;
-}
-
-/* Main content styles */
-.main-container {
-    flex: 1; /* Allow main content to fill remaining space */
-    padding: 20px;
 }
 
 
