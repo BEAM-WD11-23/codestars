@@ -7,7 +7,7 @@ body {
     font-family: sans-serif; 
 }
 
-.cardContainer {
+.PostCard {
     display: flex;
     flex-direction: column;
     /* background-color: burlywood; */
@@ -20,18 +20,17 @@ body {
 }
 
 /* Header and footer styles */
-.header,
-footer {
-    display: flex;
-    /* background-color: dodgerblue; */
+.PostCard__header,
+.PostCard__footer {
     display: flex; 
+    flex-direction: row;
     justify-content: space-between; 
     align-items: center; 
     height: 80px;
     padding: 10px 20px;
 }
 
-.menu {
+.PostCard__menu {
     position: relative;
     height: 50px;
     width: 50px;
@@ -49,11 +48,29 @@ ul{
     margin: 0; 
 }
 
-.dropdownMenu {
-    display: none;
+.PostCard__dropdownMenu {
+    /* display: none; */
+    border: 1em;
+    margin: 1em;
+    padding: 1em;
+    width: fit-content;
+    background-color: #416ABB;
+    color: white;
+    border-radius: 7%;
+
 }
 
-.header img {
+.PostCard__dropdownMenu li a {
+    cursor: pointer; 
+  }
+
+.PostCard__dropdownMenu li a:hover {
+    background-color: #e0e0e0; 
+  }
+  
+  
+
+.PostCard__profileImg{
     border-radius: 50%;
     object-fit:cover;
     contain:inherit;
@@ -61,24 +78,18 @@ ul{
     width: 50px;
 }
 
-.profileImg {
+.PostCard__profile {
     display: flex;
     align-items: center;
 }
 
-
-
-.username {
+.PostCard__username {
     margin-left: .5em;   
-  }
-  
-  .header img {
-    flex: 0 0 auto;
-  }
+}
   
 
 /* Main content styles */
-.mainContainer {
+.PostCard__body {
     flex: 1; /* Allow main content to fill remaining space */
     padding: 1.2em 1.2em;
     margin-right: 2em;
@@ -88,7 +99,7 @@ ul{
     border-radius: 20px;
 
 }
-.postImgContainer {
+.PostCard__imgContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +107,7 @@ ul{
     
 }
 
-.postImg {
+.PostCard__image {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,26 +117,15 @@ ul{
     border-radius: 20px; 
 }
 
-footer button img {
-    width: 40px; 
-    height: 40px; 
-    border-radius: 50%; /* Circular profile and icon images */
-}
 
-footer button {
-    margin-left: auto; 
-    margin-right: auto;
-}
-
-
-footer {
+.PostCard__footer {
     display: flex;
     justify-content:space-evenly;
     /* border: 2px solid; */
     align-items: center;
 }
 
-footer button {
+.PostCard__actionBtn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,16 +141,11 @@ footer button {
     border-radius: 50%;
     margin: 0;
     padding: 0;
-
+    margin-left: auto; 
+    margin-right: auto;
 }
 
-footer button:hover {
+.PostCard__actionBtn:hover {
     opacity: 0.8;
 }
 
-
-.card-container {
-    
-    max-height: 400px;
-    overflow-y: auto; 
-}
