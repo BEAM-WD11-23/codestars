@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Card Component</title>
+    <link rel="stylesheet" href="/src/components/postCard/postCard.css">
+    <script defer src="/src/components/postCard/postCard.js" ></script>
+</head>
+<body>
+    <div class="PostCard">
+        <header class="PostCard__header">
+            <div class="PostCard__profile" >
+                <img class="PostCard__profileImg" src="/public/assets/bird.jpg" alt="Profile Picture">
+                <span class="PostCard__username">username</span>
+    
+            </div>    
+
+            <div class="PostCard__menu"><i class="fa-solid fa-ellipsis"></i>
+                <ul class="PostCard__dropdownMenu" >
+                    <li><a href="#">Report Post</a></li>
+                    <li><a href="#">Copy Link</a></li>
+                    <li><a href="#">Follow</a></li>
+
+                </ul>
+            </div> 
+                
+
+        </header>
+
+        <main class="PostCard__body" >
+            <div class="PostCard__imgContainer" >
+                <img class="PostCard__image" src="/public/assets/solitude.png" alt="Post Image">
+            </div>
+            <h2>Post Title</h2>
+            <p>Post Content Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit veritatis ex velit perferendis atque omnis, laboriosam reiciendis, assumenda adipisci id quibusdam at facilis, temporibus in non earum iste commodi mollitia!</p>
+        </main>
+
+        <footer class="PostCard__footer" >
+            <button class="PostCard__actionBtn">
+            <i class="fa-solid fa-heart"></i>
+            </button>
+
+            <button class="PostCard__actionBtn">
+                <i class="fa-solid fa-comment"></i>
+            </button>
+
+            <button class="PostCard__actionBtn">
+                <i class="fa-solid fa-share"></i> 
+            </button>
+
+            <button class="PostCard__actionBtn">
+                <i class="fa-solid fa-bookmark"></i>
+            </button>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
