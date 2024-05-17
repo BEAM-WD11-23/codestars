@@ -118,6 +118,30 @@ ul{
     border-radius: 20px; 
 }
 
+.truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: height 0.3s ease;
+}
+
+.truncate.full-text {
+    display: block;
+    height: auto;  /* Allow full content display */
+  }
+
+.truncate + .read-more {
+    display:block; 
+  }
+
+  .truncate:hover + .read-more {
+    display: inline-block; 
+  }
+
+
+
 
 .PostCard__footer {
     display: flex;
