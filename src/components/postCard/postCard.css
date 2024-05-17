@@ -49,7 +49,7 @@ ul{
 }
 
 .PostCard__dropdownMenu {
-    /* display: none; */
+    display: none;
     border: 1em;
     margin: 1em;
     padding: 1em;
