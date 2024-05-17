@@ -12,11 +12,12 @@ body {
     flex-direction: column;
     /* background-color: burlywood; */
     padding: 5px;
-    border: 2px solid;
+    /* border: 2px solid; */
     border-radius: 5px;
-    margin: 2px;
-
+    margin-inline: .7em;
+    margin-top: .5em;
     overflow: hidden; 
+    box-shadow: 1px 2px 7px #cecece;
 }
 
 /* Header and footer styles */
@@ -28,6 +29,7 @@ body {
     align-items: center; 
     height: 80px;
     padding: 10px 20px;
+    box-shadow: none;
 }
 
 .PostCard__menu {
@@ -94,8 +96,7 @@ ul{
     padding: 1.2em 1.2em;
     margin-right: 2em;
     margin-left: 2em;
-    border: 3px solid;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 20px;
 
 }
