@@ -26,6 +26,7 @@ body {
 }
 
 .nav {
+    -webkit-tap-highlight-color: transparent;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -66,15 +67,16 @@ body {
 
 .notification-bubble-messages {
     position: absolute;
-    top: 5px;
+    top: 6px;
     right: 15px;
     z-index: -1;
 }
 
 .notification-bubble-notification {
     position: absolute;
-    top: 5px;
-    right: 20px;
+    top: 6px;
+    right: 21px;
+    z-index: -1;
 }
 .nav li a {
     text-decoration: none;
