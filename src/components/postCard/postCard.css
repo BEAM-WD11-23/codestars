@@ -49,6 +49,10 @@ ul{
     margin: 0; 
 }
 
+.dropdownMenu {
+    display: none;
+}
+
 .header img {
     border-radius: 50%;
     object-fit:cover;
