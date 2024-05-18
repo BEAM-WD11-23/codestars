@@ -134,6 +134,9 @@ ul{
 
 .truncate + .read-more {
     display:block; 
+    background-color: #416ABB;
+    border-radius: 20px;
+    color: white;
   }
 
   .truncate:hover + .read-more {
