@@ -4,38 +4,38 @@ function Nav() {
   return (
     <>
         <section>
-        <ul class="Nav">
-            <span class="nav-indicator"></span>
+        <ul className="Nav">
+            <span className="nav-indicator"></span>
             <li>
                 <a href="#">
-                    <i class='bx bx-home'></i>
-                    <span class="title">Home</span>
+                    <i className='bx bx-home'></i>
+                    <span className="title">Home</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-search-alt-2'></i>
-                    <span class="title">Search</span>
+                    <i className='bx bx-search-alt-2'></i>
+                    <span className="title">Search</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-item-active">
-                    <i class='bx bx-plus-circle'></i>
-                    <span class="title">New Post</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-message-square-dots'></i>
-                    <span class="title">Messages</span>
-                    <span class="notification-bubble notification-bubble-messages">3</span>
+                <a href="#" className="nav-item-active">
+                    <i className='bx bx-plus-circle'></i>
+                    <span className="title">New Post</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-bell'></i>
-                    <span class="title">Notifications</span>
-                    <span class="notification-bubble notification-bubble-notification">3</span>
+                    <i className='bx bx-message-square-dots'></i>
+                    <span className="title">Messages</span>
+                    <span className="notification-bubble notification-bubble-messages">3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i className='bx bx-bell'></i>
+                    <span className="title">Notifications</span>
+                    <span className="notification-bubble notification-bubble-notification">3</span>
                 </a>
             </li>
         </ul>

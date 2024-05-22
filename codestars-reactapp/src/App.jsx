@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       {/* Here you are supposed to use components */}
+      {<Nav/>}
     </>
   )
 }
