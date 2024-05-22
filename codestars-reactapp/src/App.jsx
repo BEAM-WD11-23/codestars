@@ -1,4 +1,5 @@
 import Header from './components/header/Header.jsx'
+import Nav from './components/nav/Nav.jsx'
 import './App.css'
 
 function App() {
