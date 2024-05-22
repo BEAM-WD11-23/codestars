@@ -3,8 +3,8 @@ import './Nav.css'
 function Header() {
   return (
     <>
-        <section class="navigation">
-        <ul class="nav">
+        <section>
+        <ul class="Nav">
             <span class="nav-indicator"></span>
             <li>
                 <a href="#">
