@@ -1,6 +1,6 @@
 import './Nav.css'
 
-function Header() {
+function Nav() {
   return (
     <>
         <section>
@@ -52,4 +52,4 @@ function Header() {
     </>
   )
 }
-export default Header
+export default Nav
