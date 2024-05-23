@@ -1,6 +1,14 @@
+import { useState } from 'react'
 import './Header.css'
 
 function Header() {
+    const [activeButton, setActiveButton] = useState('following')
+    // const [isExpanded, setIsExpanded] = useState(false)
+    function handleHeaderBar(event){
+        const buttonName = event.target.dataset.buttonname
+        setActiveButton(buttonName)
+    }
+
   return (
     <>
         <header className="Header">
@@ -19,15 +27,17 @@ function Header() {
             <div className="wrapper-following-section" style={{ marginBottom: "20px"}}>
                 <div className="wrapper">
                     <div className="slider__wrapper">
-                        <div className="moving__box"></div>
+                        <div className="moving__box" style={
+                            activeButton === 'following' ? {left: "0"} :
+                            activeButton === 'forYou' ? {left:"50%"} : null
+                            }></div>
                     </div>
                     <div className="button__wrapper">
-                        <a href="#" id="forYouBtn">Following</a>
-                        <a href="#" id="followingBtn">For you</a>
+                        <a href="#" data-buttonname="following" onClick={handleHeaderBar} >Following</a>
+                        <a href="#" data-buttonname="forYou" onClick={handleHeaderBar} >For you</a>
                     </div>
                 </div>
             </div>
-            
         </header>
     </>
   )
