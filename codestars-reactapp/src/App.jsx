@@ -9,8 +9,8 @@ function App() {
     <>
       {/* Here you are supposed to use components */}
         < Postcard /> 
-      {<Nav/>}
-      {<Navigation/>}
+
+        <Navigation/>
     </>
   )
 }
