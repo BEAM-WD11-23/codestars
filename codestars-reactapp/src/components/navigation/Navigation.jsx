@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import './Nav.css';
+import './Navigation.css';
 
 function Navigation() {
-  const [activeIndex, setActiveIndex] = useState(2); // Assuming "New Post" is initially active
+  const [activeBtnIndex, setActiveBtnIndex] = useState(2); // Assuming "New Post" is initially active
 
   const handleNavClick = (index) => {
-    setActiveIndex(index);
+    setActiveBtnIndex(index);
   };
 
   return (
     <>
       <section className="Navigation">
         <ul className="nav">
-          <span className="nav-indicator" style={{ left: `calc(${(activeIndex * 20)}% + 10%)` }}></span>
+          <span className="nav-indicator" style={{ left: `calc(${(activeBtnIndex * 20)}% + 10%)` }}></span>
           <li>
             <a
               href="#"
-              className={activeIndex === 0 ? 'nav-item-active' : ''}
+              className={activeBtnIndex === 0 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(0)}
             >
               <i className='bx bx-home'></i>
@@ -26,7 +26,7 @@ function Navigation() {
           <li>
             <a
               href="#"
-              className={activeIndex === 1 ? 'nav-item-active' : ''}
+              className={activeBtnIndex === 1 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(1)}
             >
               <i className='bx bx-search-alt-2'></i>
@@ -36,7 +36,7 @@ function Navigation() {
           <li>
             <a
               href="#"
-              className={activeIndex === 2 ? 'nav-item-active' : ''}
+              className={activeBtnIndex === 2 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(2)}
             >
               <i className='bx bx-plus-circle'></i>
@@ -46,7 +46,7 @@ function Navigation() {
           <li>
             <a
               href="#"
-              className={activeIndex === 3 ? 'nav-item-active' : ''}
+              className={activeBtnIndex === 3 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(3)}
             >
               <i className='bx bx-message-square-dots'></i>
@@ -57,7 +57,7 @@ function Navigation() {
           <li>
             <a
               href="#"
-              className={activeIndex === 4 ? 'nav-item-active' : ''}
+              className={activeBtnIndex === 4 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(4)}
             >
               <i className='bx bx-bell'></i>
