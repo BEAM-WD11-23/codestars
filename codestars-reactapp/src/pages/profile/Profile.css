@@ -36,7 +36,7 @@
     position: relative;
     flex-basis: 100%;
     min-height: 8em;
-    background-image: url(../../sasha_assets/IMG_7627.jpg);
+    background-image: url("/src/assets/sasha_assets/IMG_7627.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -82,7 +82,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../../sasha_assets/IMG_7519.jpg');  
+    background-image: url('/src/assets/sasha_assets/IMG_7519.jpg');  
 }
    
 
@@ -93,6 +93,7 @@
     align-items: center;
     background-color: transparent;
     padding-inline: 9px;
+    margin-top: 1em;
     margin-bottom: 1em;
     min-height: 50px;
     gap: .7em;
@@ -100,17 +101,21 @@
 
 .Profile__BigBtn{
     display: flex;
-    justify-content: center; 
-    align-content: center;
+    justify-content:stretch; 
+    align-items: stretch;
     flex-basis: content;
     height: 2em;
     gap: .3em;
-    padding: 0.4em 0.8em;
+    padding: 0.6em .9em;
     background-color: rgb(17, 26, 139);
     border-radius: 20vh;
     color: aliceblue;
-    font-size: 1em;
+    font-size: .9em;
     font-family: sans-serif;
+}
+
+.Profile__BigBtn p{
+    align-self: safe;
 }
 
 /* 
