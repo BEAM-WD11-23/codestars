@@ -1,5 +1,5 @@
 import Header from './components/header/Header.jsx'
-import Navigation from './components/nav/Nav.jsx'
+import Navigation from './components/nav/Navigation.jsx'
 import './App.css'
 
 function App() {

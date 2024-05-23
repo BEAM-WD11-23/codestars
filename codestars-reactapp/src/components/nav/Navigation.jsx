@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Nav.css';
+import './Navigation.css';
 
 function Navigation() {
   const [activeIndex, setActiveIndex] = useState(2); // Assuming "New Post" is initially active
