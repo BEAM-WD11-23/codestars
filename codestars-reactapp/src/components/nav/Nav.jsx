@@ -1,10 +1,10 @@
 import './Nav.css'
 
-function Nav() {
+function Navigation() {
   return (
     <>
-        <section>
-        <ul className="Nav">
+        <section className="Navigation">
+        <ul className="nav">
             <span className="nav-indicator"></span>
             <li>
                 <a href="#">
@@ -52,4 +52,4 @@ function Nav() {
     </>
   )
 }
-export default Nav
+export default Navigation
