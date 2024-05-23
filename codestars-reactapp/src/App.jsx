@@ -1,7 +1,5 @@
-import Header from './components/header/Header.jsx'
-import Navigation from './components/navigation/Navigation.jsx'
-import Profile from './pages/profile/Profile.jsx'
 import './App.css'
+import Profile from './pages/profile/Profile.jsx'
 
 function App() {
 
