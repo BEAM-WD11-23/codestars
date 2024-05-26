@@ -19,6 +19,7 @@ body {
     margin-top: .5em;
     overflow: hidden; 
     box-shadow: 1px 2px 7px #cecece;
+
 }
 
 /* Header and footer styles */
@@ -31,6 +32,10 @@ body {
     height: 80px;
     padding: 10px 20px;
     box-shadow: none;
+}
+
+.Postcard__footer {
+    margin-bottom: 100px;
 }
 
 .Postcard__menu {
