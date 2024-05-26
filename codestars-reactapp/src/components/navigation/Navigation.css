@@ -20,6 +20,8 @@ body {
     /* height: 100vh; */
     font-family: var(--font-nav);
     background-color: var(--bg-body);
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 /* #filter-svg {
@@ -30,7 +32,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: calc(100% - 4px);
     list-style-type: none;
     display: flex;
     justify-content: space-around;
