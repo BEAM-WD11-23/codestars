@@ -12,7 +12,7 @@ function Navigation() {
     <>
       <section className="Navigation">
         <ul className="nav">
-          <span className="nav-indicator" style={{ left: `calc(${(activeBtnIndex * 20)}% + 10%)` }}></span>
+          <span className="nav__indicator" style={{ left: `calc(${(activeBtnIndex * 20)}% + 10%)` }}></span>
           <li>
             <a
               href="#"
@@ -66,7 +66,7 @@ function Navigation() {
             </a>
           </li>
         </ul>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filter-svg">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filter-svg">
           <defs>
             <filter id="goo">
               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
@@ -74,7 +74,7 @@ function Navigation() {
               <feBlend in="SourceGraphic" in2="goo" />
             </filter>
           </defs>
-        </svg>
+        </svg> */}
       </section>
     </>
   );
