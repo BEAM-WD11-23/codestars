@@ -1,0 +1,58 @@
+{
+  "usesTypeScript": false,
+  "usesStyledComponents": true,
+  "cssPreprocessor": "css",
+  "testLibrary": "none",
+  "component": {
+    "default": {
+      "customTemplates": {
+        "component": "src/_templates/TemplateName.jsx",
+        "style": "src/_templates/TemplateName.style.css",
+        "styled": "src/_templates/TemplateName.styled.js"
+      },
+      "path": "src/components",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": true,
+      "withTest": false,
+      "extension": "jsx"
+    },
+    "page": {
+      "customTemplates": {
+        "component": "src/_templates/TemplateName.jsx",
+        "style": "src/_templates/TemplateName.style.css"
+      },
+      "path": "src/pages",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": true,
+      "withTest": false,
+      "extension": "jsx"
+    },
+    "service": {
+      "customTemplates": {
+        "component": "src/_templates/templateName.service.jsx"
+      },
+      "path": "src/services",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": false,
+      "withTest": false,
+      "extension": "jsx"
+    },
+    "provider": {
+      "customTemplates": {
+        "component": "src/_templates/templateName.provider.jsx"
+      },
+      "path": "src/providers",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": false,
+      "withTest": true,
+      "withContext": true,
+      "extension": "jsx"
+    }
+  }
+}
+
+
