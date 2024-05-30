@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite --host='192.168.178.42' --open",
+    "start": "vite --open",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -12,8 +13,10 @@
   "dependencies": {
     "date-fns": "^3.6.0",
     "postcss-apply": "^0.12.0",
+    "framer-motion": "^11.2.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
