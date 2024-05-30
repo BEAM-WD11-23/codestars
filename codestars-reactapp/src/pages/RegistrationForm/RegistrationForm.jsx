@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import './RegistrationForm.style.css';
-import { Wrapper, InputWrapper, Form, Fieldset, SubmitBtn } from './RegistrationForm.styled';
+import { Wrapper, InputWrapper, Form, Fieldset, SubmitBtn, CheckboxLabel, Checkbox } from './RegistrationForm.styled';
 function RegistrationForm(){
  
   const [isChecked, setIsChecked] = useState(false)
@@ -52,33 +52,12 @@ function RegistrationForm(){
     <Fieldset>
      
 
-      {/* <label htmlFor="accept-terms">I accept terms &amp; Conditions</label> */}
-
-      {/* <label 
-      style={{ 
-
-        backgroundColor: isClicked ? MyLabel.clickedColor : MyLabel.defaultColor,
-
-        backgroundColor: isHovered ? MyLabel.hoverColor : MyLabel.defaultColor,
-
-      }}
-
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-
-
-      onMouseUpCapture={() => setIsClicked(true)}
-      htmlFor="accept-terms"
-    >
-      I accept terms &amp; Conditions
-    </label> */}
-
-<motion.label
+    <CheckboxLabel
       initial={isChecked && {color:MyLabel.checkedColor}}
-      // whileHover={{backgroundColor:MyLabel.hoverColor}}
+      whileHover={{backgroundColor:MyLabel.hoverColor}}
         htmlFor="accept-terms"
       >
-         <InputWrapper
+      <Checkbox
         type="checkbox"
         checked={isChecked}
         onChange={()=> setIsChecked(!isChecked)}
@@ -90,17 +69,24 @@ function RegistrationForm(){
       />
 
         I accept terms &amp; Conditions
-      </motion.label>
+    </CheckboxLabel>
 
 
     </Fieldset>
-    <br />
+
     <SubmitBtn
         type="submit">Create Account</SubmitBtn>
-            
+
     <br />
 
-    <h5>Already have an account?</h5> <a href="'">Login</a>
+    <h4>Already have an account?</h4> <a href="#" style={{
+      color: 'white',
+      margin: '2px 2px',
+      padding: '.2em .8em',
+      boxShadow: '2px 2px 7px rgba(0 0 0 /.5)',
+      border: '1px solid #ddd',
+      borderRadius: '7px'
+      }} >Login</a>
   </Form>
 </ Wrapper>
 
