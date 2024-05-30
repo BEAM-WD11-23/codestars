@@ -33,7 +33,7 @@ function Header() {
                             }></div>
                     </div>
                     <div className="button__wrapper">
-                        <a style={{backgroundColor:"red"}} href="#" data-buttonname="following" onClick={handleHeaderBar} >Following</a>
+                        <a href="#" data-buttonname="following" onClick={handleHeaderBar} >Following</a>
                         <a href="#" data-buttonname="forYou" onClick={handleHeaderBar} >For you</a>
                     </div>
                 </div>
