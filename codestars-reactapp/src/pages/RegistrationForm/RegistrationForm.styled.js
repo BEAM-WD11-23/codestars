@@ -32,11 +32,15 @@ export const Fieldset = styled.fieldset`
     border-radius: 7px;
 `
 export const CheckboxLabel =styled(motion.label)`
+     /* background-color: yellow; */
+    display: flex;
+    align-items: stretch;
+    padding: .7em ;
 `
 
 export const Checkbox = styled(motion.input)`
-    background-color: yellow;
-    padding: .5em;
+    padding-right: 1em;
+   
 
 `
 
