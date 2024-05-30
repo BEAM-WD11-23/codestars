@@ -39,7 +39,7 @@ export const CheckboxLabel =styled(motion.label)`
 `
 
 export const Checkbox = styled(motion.input)`
-    padding-right: 1em;
+    margin-right: 1em;
    
 
 `
