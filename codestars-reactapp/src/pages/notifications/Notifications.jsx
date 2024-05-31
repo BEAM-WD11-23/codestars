@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../../components/navigation/Navigation';
 
 const notifications = [
@@ -31,9 +31,9 @@ const notifications = [
     name: "Mia Robinson",
     message: "Liked Emily Johnson's comment",
     time: "01:00 p.m",
-    date: "25.05.2024",
+    date: "Today",
     avatar: "src/assets/images/notif-images-avatar/ar-girl4.jpeg"
-  }
+  }   
 ];
 
 const groupedNotifications = notifications.reduce((groups, notification) => {
@@ -46,7 +46,7 @@ const groupedNotifications = notifications.reduce((groups, notification) => {
 }, {});
 
 const NotificationItem = ({ notification }) => (
-  <div className="notification__item">
+  <div className="notification__item flex items-center p-2 border-b border-gray-200">
     <img className="w-12 h-12 rounded-full mr-4" src={notification.avatar} alt={notification.name} />
     <div className="flex-1">
       <p className="text-base text-navBg font-semibold">{notification.name}</p>
@@ -60,14 +60,41 @@ const NotificationItem = ({ notification }) => (
 );
 
 const Notifications = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredNotifications = notifications.filter(notification =>
+    notification.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    notification.message.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const groupedFilteredNotifications = filteredNotifications.reduce((groups, notification) => {
+    const { date } = notification;
+    if (!groups[date]) {
+      groups[date] = [];
+    }
+    groups[date].push(notification);
+    return groups;
+  }, {});
+
   return (
     <div>
-      <div className="Notifications__container">
-        <h2 className="notifications__title">Notifications</h2>
-        {Object.keys(groupedNotifications).map(date => (
+      <div className="Notifications__container p-4">
+        <h2 className="notifications__title text-xl font-bold mb-4">Notifications</h2>
+        <input 
+          type="text" 
+          placeholder="Search notifications..." 
+          value={searchTerm}
+          onChange={handleSearch}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
+        />
+        {Object.keys(groupedFilteredNotifications).map(date => (
           <div key={date}>
-            <h3 className="notifications__date">{date}</h3>
-            {groupedNotifications[date].map(notification => (
+            <h3 className="notifications__date text-lg font-semibold mt-4 mb-2">{date}</h3>
+            {groupedFilteredNotifications[date].map(notification => (
               <NotificationItem key={notification.id} notification={notification} />
             ))}
           </div>
