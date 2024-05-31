@@ -20,7 +20,7 @@ function Login(){
                     <LogInForm.Login__Title>Log In</LogInForm.Login__Title>
                 {/* </LogInForm.Login__TitleWrapper> */}
                 
-             
+               
                 <LogInForm.Login__Input 
                 whileHover={{boxShadow: "2px 2px 7px rgba(0 0 0 /.5)"}}
                 whileFocus={{boxShadow: "2px 2px 7px rgba(0 0 0 /.5)"}}
@@ -31,8 +31,7 @@ function Login(){
                 pattern="/^(?:\w+|\w+([+\.-]?\w+)*@\w+([\.-]?\w+)*(\.[a-zA-z]{2,4})+)$/gm"
                 required=""
                 ></LogInForm.Login__Input>
-          
-
+              
                 <LogInForm.Login__ErrorWrapper>
                     <LogInForm.Login__ErrorIcon src={errorLogo}></LogInForm.Login__ErrorIcon>
                     <LogInForm.Login__ErrorMessage>Try again with a valid username or mail.</LogInForm.Login__ErrorMessage>

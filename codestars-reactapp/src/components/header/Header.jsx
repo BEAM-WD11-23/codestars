@@ -22,8 +22,8 @@ function Header() {
                         <div className="moving__box"></div>
                     </div>
                     <div className="button__wrapper">
-                        <a href="#" id="forYouBtn">Following</a>
-                        <a href="#" id="followingBtn">For you</a>
+                        <a href="#" data-buttonname="following" onClick={handleHeaderBar} >Following</a>
+                        <a href="#" data-buttonname="forYou" onClick={handleHeaderBar} >For you</a>
                     </div>
                 </div>
             </div>
