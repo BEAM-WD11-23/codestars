@@ -16,8 +16,6 @@ import profilePicture from "/src/assets/postcard/bird.jpg"
 import postPicture from "/src/assets/postcard/solitude.png"
 import { Carousel } from "@material-tailwind/react";
 
-
-
 function Postcard() {
   const [isExpanded, setIsExpanded] = useState(false)
 
