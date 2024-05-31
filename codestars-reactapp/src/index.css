@@ -1,0 +1,48 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@layer components {
+    .Notifications__container {
+        @apply 
+        container
+        mx-auto
+        mt-8
+        p-6
+        max-w-lg
+        bg-white
+        shadow-lg
+        rounded-lg
+    }
+
+    .Notifications__container .notifications__title {
+        @apply 
+        text-2xl
+        font-semibold
+        mb-6
+        text-center 
+        text-navBg
+    }
+
+    .Notifications__container .notifications__date {
+        @apply
+        text-base
+        font-semibold
+        mb-4
+        text-navBg
+    }
+
+     .notification__item {
+        @apply
+        flex
+        items-center
+        p-4
+        border-b
+        border-gray-200
+        hover:bg-gray-100
+        transition
+        duration-300
+    }
+}   
