@@ -56,7 +56,7 @@ function Navigation() {
           </li>
           <li>
             <a
-              href="#"
+              href="./notifications/Notifications.jsx"
               className={activeBtnIndex === 4 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(4)}
             >
