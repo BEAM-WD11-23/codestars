@@ -8,7 +8,7 @@ const notifications = [
     message: "Posted a comment",
     time: "01:00 p.m",
     date: "Today",
-    avatar: "src/assets/images/notif-images-avatar/ar-girl1.jpeg"
+    avatar: "./src/assets/images/notif-images-avatar/ar-girl1.jpeg"
   },
   {
     id: 2,

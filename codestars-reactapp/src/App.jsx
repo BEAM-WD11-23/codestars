@@ -11,7 +11,7 @@ function App() {
     <>
       {/* Here you are supposed to use components */}
         {/* <Feed /> */}
-      <Notifications />
+        <Notifications />
      
         {/* <RegistrationForm /> */}
     </>
