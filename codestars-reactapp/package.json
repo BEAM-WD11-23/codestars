@@ -4,7 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+<<<<<<< HEAD
     "start": "vite --open",
+=======
+    "start": "vite --host='192.168.178.42' --open",
+>>>>>>> 6e4881a0f0270fba321be16ed53591453e785e48
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
