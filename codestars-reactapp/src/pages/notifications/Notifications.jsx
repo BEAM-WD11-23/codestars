@@ -31,19 +31,10 @@ const notifications = [
     name: "Mia Robinson",
     message: "Liked Emily Johnson's comment",
     time: "01:00 p.m",
-    date: "Today",
+    date: "25.05.2024",
     avatar: "src/assets/images/notif-images-avatar/ar-girl4.jpeg"
-  }   
-];
-
-const groupedNotifications = notifications.reduce((groups, notification) => {
-  const { date } = notification;
-  if (!groups[date]) {
-    groups[date] = [];
   }
-  groups[date].push(notification);
-  return groups;
-}, {});
+];
 
 const NotificationItem = ({ notification }) => (
   <div className="notification__item flex items-center p-2 border-b border-gray-200">
@@ -68,7 +59,8 @@ const Notifications = () => {
 
   const filteredNotifications = notifications.filter(notification =>
     notification.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    notification.message.toLowerCase().includes(searchTerm.toLowerCase())
+    notification.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    notification.date.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const groupedFilteredNotifications = filteredNotifications.reduce((groups, notification) => {
