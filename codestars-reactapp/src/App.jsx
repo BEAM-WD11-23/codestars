@@ -5,8 +5,9 @@ function App() {
 
   return (
     <>
-      <Outlet></Outlet>
-    </> 
+    {/* Outlet marks the place where Router should render pages. */}
+      <Outlet />
+    </>
   )
 }
 

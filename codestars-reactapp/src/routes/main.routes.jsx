@@ -1,19 +1,14 @@
-import { createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-import Feed from "/src/pages/Feed";
-import Login from "/src/pages/LogIn/LogIn";
-import Profile from "/src/pages/profile/Profile";
-import App from "/src/App";
-import Notifications from "/src/pages/notifications/Notifications";
-import RegistrationFrom from "/src/pages/RegistrationForm/RegistrationForm.jsx"
+import App from '../App';
+import RegistrationForm from '../pages/RegistrationForm/RegistrationForm'
+import Notifications from '../pages/notifications/Notifications'
+import Feed from '../pages/Feed'
 
 export const router = createBrowserRouter([
-  {element: <App />, children: [
-    {path: "/", element: <Feed />},
-    {path: "login", element: <Login/>},
-    {path: "profile", element: <Profile/>},
-    {path: "notifications", element: <Notifications/>},
-    {path: "registration", element: <RegistrationFrom/>},
-
-  ]},
-])
+    { element: <App />, children: [
+      {path: "/", element: <Feed />},
+      {path: "register", element: <RegistrationForm />},
+      {path: "notifications", element: <Notifications />}
+    ]},
+  ])

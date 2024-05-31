@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import './Navigation.css';
 
 function Navigation() {
@@ -16,7 +16,11 @@ function Navigation() {
           <span className="nav__indicator" style={{ left: `calc(${(activeBtnIndex * 20)}% + 10%)` }}></span>
           <li>
             <Link
+<<<<<<< HEAD
               to="#"
+=======
+              to="/"
+>>>>>>> f2fa04368cf4a903ffecba530ac1461b672f50b7
               className={activeBtnIndex === 0 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(0)}
             >
@@ -26,7 +30,11 @@ function Navigation() {
           </li>
           <li>
             <Link
+<<<<<<< HEAD
               href="#"
+=======
+              to="/search"
+>>>>>>> f2fa04368cf4a903ffecba530ac1461b672f50b7
               className={activeBtnIndex === 1 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(1)}
             >
@@ -36,7 +44,11 @@ function Navigation() {
           </li>
           <li>
             <Link
+<<<<<<< HEAD
               href="#"
+=======
+              to="/create-post"
+>>>>>>> f2fa04368cf4a903ffecba530ac1461b672f50b7
               className={activeBtnIndex === 2 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(2)}
             >
@@ -46,7 +58,11 @@ function Navigation() {
           </li>
           <li>
             <Link
+<<<<<<< HEAD
               href="#"
+=======
+              to="/messages"
+>>>>>>> f2fa04368cf4a903ffecba530ac1461b672f50b7
               className={activeBtnIndex === 3 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(3)}
             >
@@ -57,7 +73,11 @@ function Navigation() {
           </li>
           <li>
             <Link
+<<<<<<< HEAD
               href="#"
+=======
+              to="/notifications"
+>>>>>>> f2fa04368cf4a903ffecba530ac1461b672f50b7
               className={activeBtnIndex === 4 ? 'nav-item-active' : ''}
               onClick={() => handleNavClick(4)}
             >
