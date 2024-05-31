@@ -1,6 +1,14 @@
+import { useState } from 'react'
 import './Header.css'
 
 function Header() {
+    const [activeButton, setActiveButton] = useState('following')
+    // const [isExpanded, setIsExpanded] = useState(false)
+    function handleHeaderBar(event){
+        const buttonName = event.target.dataset.buttonname
+        setActiveButton(buttonName)
+    }
+
   return (
     <>
         <header className="Header">

@@ -18,6 +18,7 @@ margin: auto;
 box-sizing: border-box;
 border-radius: 2vh;
 box-shadow: 2px 2px 7px rgba(0 0 0 /.5);
+
 &::after {
     content: '';
     position: absolute;
@@ -28,26 +29,9 @@ box-shadow: 2px 2px 7px rgba(0 0 0 /.5);
     background-image: url(${waveImg});
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: .8; // Adjust the opacity as needed
+    opacity: .8; 
   }
 `
-
-// export const Login__TitleWrapper = styled.div`
-// display: flex;
-// justify-content: center;
-// align-items: center;
-// margin: 0;
-// width: 120%;
-// height: 12em;
-// background: url(${waveImg}) no-repeat;
-// background-size: cover;
-// mask-size: cover;
-// mask-repeat: no-repeat;
-// mask-position: center;
-// -webkit-mask-image: linear-gradient(black, transparent);
-// mask-image: linear-gradient (black, transparent);
-// `
-
 
 export const Login__Title = styled.h1`
 display: block;
@@ -59,25 +43,43 @@ box-sizing: border-box;
 z-index: 9999;
 `
 
-export const Login__Input = styled(motion.input)`
+export const Login__InputWrapper = styled.div`
+background-color: white;
+display: block;
+position: relative;
+min-width: 95%;
+flex: 1;
+padding: .4em;
+border-radius: 1vh;
+font-size: 1.2em;
+box-sizing: border-box;
+border: 3px solid gray;
+
+  &::after{
+    content: "Username or Email";
+    font-family: sans-serif;
+    position: absolute;
+    top: -11px;
+    left: 8px;
+    color: black;
+    font-size: .8em;
+    background-color: transparent;
+    padding-inline: .5em;
+    }
+`
+
+export const Login__Input = styled.input`
 display: flex;
 align-items: center;
 justify-content: center;
 position: relative;
-min-width: 95%;
-flex: 1;
-padding: .4em .7em;
+width: 100%;
 border-radius: 1vh;
 font-size: 1.2em;
-box-sizing: border-box;
 border: none;
 outline: none;
-color: white;
-    /* &::placeholder{
-        color: darkgray;
-        font-size: 1.2em;
-    } */
-
+color: black;
+z-index: 9999;
     &:hover{
         border: none;
         outline: none;
@@ -92,21 +94,6 @@ color: white;
         border: none;
         outline: none;
     }
-
-    &::after{
-    content: "Hello, World!";
-    font-family: sans-serif;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    color: red;
-    font-size: 1em;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    border-radius: 5px;
-
-    }
-
 `
 
 export const Login__ErrorWrapper = styled.div`
