@@ -1,15 +1,15 @@
+import Login from '/src/pages/LogIn/LogIn.jsx'
+import { useState } from 'react';
 import './App.css'
-import Profile from './pages/profile/Profile.jsx'
-import Postcard from './components/postcard/Postcard.jsx'
-import Feed from './pages/Feed.jsx'
+
 
 function App() {
 
   return (
     <>
       {/* Here you are supposed to use components */}
-      {<Profile/>}
-        {/* <Feed /> */}
+     <Login/>
+  
     </>
   )
 }
