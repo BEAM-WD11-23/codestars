@@ -1,9 +1,32 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
 function Navigation() {
+  const location = useLocation();
   const [activeBtnIndex, setActiveBtnIndex] = useState(2); // Assuming "New Post" is initially active
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/':
+        setActiveBtnIndex(0);
+        break;
+      case '/search':
+        setActiveBtnIndex(1);
+        break;
+      case '/create-post':
+        setActiveBtnIndex(2);
+        break;
+      case '/messages':
+        setActiveBtnIndex(3);
+        break;
+      case '/notifications':
+        setActiveBtnIndex(4);
+        break;
+      default:
+        setActiveBtnIndex(null);
+    }
+  }, [location.pathname]);
 
   const handleNavClick = (index) => {
     setActiveBtnIndex(index);
@@ -67,15 +90,6 @@ function Navigation() {
             </Link>
           </li>
         </ul>
-        {/* <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filter-svg">
-          <defs>
-            <filter id="goo">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-              <feBlend in="SourceGraphic" in2="goo" />
-            </filter>
-          </defs>
-        </svg> */}
       </section>
     </>
   );
