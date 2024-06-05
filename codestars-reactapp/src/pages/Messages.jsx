@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import MessageCard from "./MessageCard";
-import accountImage from "../header/Assets/A.png";
-import accountImageB from "../header/Assets/B.png";
-import accountImageC from "../header/Assets/C.png";
+import MessageCard from "../components/MessageCard/MessageCard";
+import accountImage from "../components/header/Assets/A.png";
+import accountImageB from "../components/header/Assets/B.png";
+import accountImageC from "../components/header/Assets/C.png";
+import SmHeader from "../components/header/SmHeader";
+import Navigation from "../components/navigation/Navigation";
 
 const Messages = () => {
+  
   const [searchQuery, setSearchQuery] = useState("");
-
+  
   const messages = [
     {
       id: 1,
@@ -30,21 +33,25 @@ const Messages = () => {
       timestamp: "Tue",
     },
   ];
-
+  
   const filteredMessages = messages.filter(
     (msg) =>
       msg.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      msg.message.toLowerCase().includes(searchQuery.toLowerCase())
+    msg.message.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
+  
   return (
     <div>
+      <SmHeader></SmHeader>
+      
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           marginBottom: "20px",
+          paddingTop: "2em"
+
         }}>
         <input
           type="text"
@@ -70,6 +77,7 @@ const Messages = () => {
           timestamp={msg.timestamp}
         />
       ))}
+    <Navigation/>
     </div>
   );
 };

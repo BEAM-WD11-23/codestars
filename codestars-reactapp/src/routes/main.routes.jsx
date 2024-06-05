@@ -5,6 +5,7 @@ import RegistrationForm from '../pages/RegistrationForm/RegistrationForm'
 import Notifications from '../pages/notifications/Notifications'
 import PageNotFound from '../pages/404/PageNotFound'
 import Feed from '../pages/Feed'
+import Messages from "../pages/Messages";
 
 export const router = createBrowserRouter([
     { element: <App />, children: [
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
       {path: "404", element: <PageNotFound />},
       {path: "search", element: <PageNotFound />},
       {path: "create-post", element: <PageNotFound />},
-      {path: "messages", element: <PageNotFound />},
+      {path: "messages", element: <Messages />},
       // {path: "test", element: <RegistrationForm />}
     ]},
   ])

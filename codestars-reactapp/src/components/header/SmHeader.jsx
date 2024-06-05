@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './SmHeader.css'
 
-function Header() {
+function SmHeader() {
     return (
         <>
             <header className="Header">
@@ -22,4 +22,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default SmHeader;
