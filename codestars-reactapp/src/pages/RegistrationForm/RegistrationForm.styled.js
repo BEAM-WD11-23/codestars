@@ -1,3 +1,4 @@
+import { Formik, Form, Field, ErrorMessage, validateYupSchema } from "formik"
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
@@ -13,14 +14,15 @@ export const Wrapper = styled.div`
     padding-top: 0.5em;
     padding-bottom: 0.8em;
 `
-export const InputWrapper =styled.input`
-    background-color: yellowgreen;
+export const InputWrapper =styled(Field)`
+    /* background-color: yellowgreen; */
+    border: 1px solid gray;
     width: 100%;
     margin: .7em;
     padding: 0.5em;
 `
 
-export const Form = styled.form`
+export const RegForm = styled(Form)`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -45,6 +47,7 @@ export const Checkbox = styled(motion.input)`
 `
 
 export const SubmitBtn = styled.button`
+background-color: beige;
     /* color: white; */
     padding: .5em;
 
