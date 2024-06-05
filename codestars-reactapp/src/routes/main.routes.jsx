@@ -6,6 +6,12 @@ import Notifications from '../pages/notifications/Notifications'
 import PageNotFound from '../pages/404/PageNotFound'
 import Feed from '../pages/Feed'
 import Messages from "../pages/Messages";
+import UserRow from "../components/User_info_and_NAV_MESSAGES/userInfo.Nav";
+import MessageBubble from "../components/MessageBubble/MessageBubble";
+import ExampleComponent from "../components/MessageBubble/MessageBubble";
+import MessageBubbleComponent from "../components/MessageBubble/MessageBubble";
+import Form from "../components/Form_Messages/Form_Messages";
+import Form_Messages from "../components/Form_Messages/Form_Messages";
 
 export const router = createBrowserRouter([
     { element: <App />, children: [
@@ -16,6 +22,12 @@ export const router = createBrowserRouter([
       {path: "search", element: <PageNotFound />},
       {path: "create-post", element: <PageNotFound />},
       {path: "messages", element: <Messages />},
+      {path: "daniel", element: <UserRow />},
+      {path: "daniel2", element: <MessageBubbleComponent/>},
+      {path: "daniel3", element: <Form_Messages/>},
+
+
+
       // {path: "test", element: <RegistrationForm />}
     ]},
   ])
