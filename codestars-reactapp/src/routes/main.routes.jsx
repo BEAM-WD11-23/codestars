@@ -12,6 +12,7 @@ import ExampleComponent from "../components/MessageBubble/MessageBubble";
 import MessageBubbleComponent from "../components/MessageBubble/MessageBubble";
 import Form from "../components/Form_Messages/Form_Messages";
 import Form_Messages from "../components/Form_Messages/Form_Messages";
+import NewPostForm from "../pages/newpost/NewPostForm";
 
 export const router = createBrowserRouter([
     { element: <App />, children: [
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
       {path: "notifications", element: <Notifications />},
       {path: "404", element: <PageNotFound />},
       {path: "search", element: <PageNotFound />},
-      {path: "create-post", element: <PageNotFound />},
+      {path: "create-post", element: <NewPostForm />},
       {path: "messages", element: <Messages />},
       {path: "daniel", element: <UserRow />},
       {path: "daniel2", element: <MessageBubbleComponent/>},
