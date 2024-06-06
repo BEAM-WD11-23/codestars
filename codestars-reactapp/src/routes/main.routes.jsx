@@ -13,11 +13,13 @@ import MessageBubbleComponent from "../components/MessageBubble/MessageBubble";
 import Form from "../components/Form_Messages/Form_Messages";
 import Form_Messages from "../components/Form_Messages/Form_Messages";
 import NewPostForm from "../pages/newpost/NewPostForm";
+import RegistrationFormik from '../pages/RegistrationForm/RegistrationForm'
+
 
 export const router = createBrowserRouter([
     { element: <App />, children: [
       {path: "/", element: <Feed />},
-      {path: "register", element: <RegistrationForm />},
+      {path: "register", element: <RegistrationFormik />},
       {path: "notifications", element: <Notifications />},
       {path: "404", element: <PageNotFound />},
       {path: "search", element: <PageNotFound />},

@@ -110,7 +110,8 @@ function submitFn(values){
     
         <br />
     
-        <h4>Already have an account?</h4> <a href="#" style={{
+        <h4>Already have an account?</h4>
+        <a href="#" style={{
           color: 'white',
           margin: '2px 2px',
           padding: '.2em .8em',
