@@ -49,6 +49,18 @@ export const Menu = styled.div`
     background-color: white;
 `
 
+export const DropdownList = styled.ul`
+    display: none;
+    border: 1em;
+    margin: 1em;
+    padding: 1em;
+    width: fit-content;
+    background-color: #416ABB;
+    color: white;
+    border-radius: 7%;
+    z-index: 100;
+`
+
 export const ImageWrapper = styled.div`
     display: flex;
     justify-content: center;

@@ -10,7 +10,8 @@ import {
   TextWrapper,
   Title,
   Text,
-  Read_More_Less
+  Read_More_Less,
+  DropdownList
 } from "./Postcard.styled"
 import profilePicture from "/src/assets/postcard/bird.jpg"
 import postPicture from "/src/assets/postcard/solitude.png"
@@ -36,7 +37,7 @@ function Postcard() {
         </div>
         <Menu>
           <i className="fa-solid fa-ellipsis" />
-          <ul className="Postcard__dropdownMenu">
+          <DropdownList>
             <li>
               <a href="#">Report Post</a>
             </li>
@@ -46,7 +47,7 @@ function Postcard() {
             <li>
               <a href="#">Follow</a>
             </li>
-          </ul>
+          </DropdownList>
         </Menu>
       </Header>
       <Body>

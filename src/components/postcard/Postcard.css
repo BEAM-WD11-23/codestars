@@ -57,6 +57,7 @@
     background-color: #416ABB;
     color: white;
     border-radius: 7%;
+    z-index: 100;
 
 }
 
