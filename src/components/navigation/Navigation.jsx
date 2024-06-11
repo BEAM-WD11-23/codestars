@@ -4,7 +4,7 @@ import './Navigation.css';
 
 function Navigation() {
   const location = useLocation();
-  const [activeBtnIndex, setActiveBtnIndex] = useState(2); // Assuming "New Post" is initially active
+  const [activeBtnIndex, setActiveBtnIndex] = useState(location.pathname); // Assuming "New Post" is initially active
 
   useEffect(() => {
     switch (location.pathname) {

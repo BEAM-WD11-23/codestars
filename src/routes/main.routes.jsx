@@ -17,7 +17,7 @@ import RegistrationFormik from '../pages/RegistrationForm/RegistrationForm'
 
 
 export const router = createBrowserRouter([
-    { element: <App />, children: [
+    { element: <App />, errorElement: <PageNotFound />, children: [
       {path: "/", element: <Feed />},
       {path: "register", element: <RegistrationFormik />},
       {path: "notifications", element: <Notifications />},
