@@ -9,7 +9,7 @@ import UserRow from "../components/User_info_and_NAV_MESSAGES/userInfo.Nav";
 import MessageBubbleComponent from "../components/MessageBubble/MessageBubble";
 import Form_Messages from "../components/Form_Messages/Form_Messages";
 import NewPostForm from "../pages/newpost/NewPostForm";
-import RegistrationFormik from '../pages/registrationform/RegistrationForm';
+import RegistrationFormik from '../pages/registrationForm/RegistrationForm';
 import NavigationLayout from "../layouts/NavigationLayout";
 import Profile from "../pages/profile/Profile";
 

@@ -22,7 +22,7 @@ const Feed = () => {
             }
             </main>
         </section>
-    );
+    );ß
 };
 
 export default Feed;
