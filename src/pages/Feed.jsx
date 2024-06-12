@@ -13,9 +13,6 @@ const Feed = () => {
             <main>
                 <Postcard />
             </main>
-            <footer>
-                <Navigation />
-            </footer>
         </section>
     );
 };

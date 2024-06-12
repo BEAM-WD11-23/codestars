@@ -14,23 +14,23 @@ import Form from "../components/Form_Messages/Form_Messages";
 import Form_Messages from "../components/Form_Messages/Form_Messages";
 import NewPostForm from "../pages/newpost/NewPostForm";
 import RegistrationFormik from '../pages/RegistrationForm/RegistrationForm'
+import NavigationLayout from "../layouts/NavigationLayout";
+import Profile from "../pages/profile/Profile";
 
 
 export const router = createBrowserRouter([
-    { element: <App />, errorElement: <PageNotFound />, children: [
-      {path: "/", element: <Feed />},
-      {path: "register", element: <RegistrationFormik />},
-      {path: "notifications", element: <Notifications />},
-      {path: "404", element: <PageNotFound />},
-      {path: "search", element: <PageNotFound />},
-      {path: "create-post", element: <NewPostForm />},
-      {path: "messages", element: <Messages />},
-      {path: "daniel", element: <UserRow />},
-      {path: "daniel2", element: <MessageBubbleComponent/>},
-      {path: "daniel3", element: <Form_Messages/>},
-
-
-
-      // {path: "test", element: <RegistrationForm />}
+    {element: <App />, errorElement: <PageNotFound />, children: [
+        {element: <NavigationLayout />, children: [
+            {path: "/", element: <Feed />},
+            {path: "search", element: <PageNotFound />},
+            {path: "create-post", element: <NewPostForm />},
+            {path: "messages", element: <Messages />},
+            {path: "notifications", element: <Notifications />},
+            {path: "profile", element: <Profile />},
+        ]},
+        {path: "register", element: <RegistrationFormik />},
+        {path: "daniel", element: <UserRow />},
+        {path: "daniel2", element: <MessageBubbleComponent/>},
+        {path: "daniel3", element: <Form_Messages/>},
     ]},
-  ])
+])

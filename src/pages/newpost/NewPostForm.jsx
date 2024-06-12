@@ -78,9 +78,6 @@ const NewPostForm = () => {
           )}
         </Formik>
       </div>
-    <div>
-    <Navigation />
-  </div>
     </div>
   );
 };

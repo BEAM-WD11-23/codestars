@@ -77,7 +77,6 @@ const Messages = () => {
           timestamp={msg.timestamp}
         />
       ))}
-    <Navigation/>
     </div>
   );
 };

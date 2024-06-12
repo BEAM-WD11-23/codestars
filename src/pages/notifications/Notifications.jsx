@@ -259,10 +259,6 @@ const Notifications = () => {
           </div>
         ))}
       </div>
-
-      <div>
-        <Navigation />
-      </div>
     </div>
   );
 };

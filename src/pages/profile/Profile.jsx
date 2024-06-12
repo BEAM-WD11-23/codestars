@@ -40,7 +40,6 @@ function Profile() {
       
       <Postcard/>
       <Postcard/>
-      <Navigation/>
     
     </>
   )

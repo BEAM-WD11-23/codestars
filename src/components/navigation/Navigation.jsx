@@ -6,6 +6,10 @@ function Navigation() {
   const location = useLocation();
   const [activeBtnIndex, setActiveBtnIndex] = useState(location.pathname); // Assuming "New Post" is initially active
 
+  useEffect(()=>{
+    console.log('Navigation created.');
+  },[])
+
   useEffect(() => {
     switch (location.pathname) {
       case '/':
