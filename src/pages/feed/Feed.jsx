@@ -1,5 +1,7 @@
 import Header from '../../components/header/Header';
+import PostError from '../../components/postError/PostError';
 import Postcard from '../../components/postcard/Postcard';
+import Spinner from '../../components/spinner/Spinner';
 import { getPosts } from '../../services/post.service';
 import './Feed.css';
 
@@ -13,7 +15,11 @@ const Feed = () => {
         <section className="Feed">
             <Header />
             <main>
-                {posts && posts.map((post, index) => <Postcard post={post} key={index} />)}
+            {
+                isPending ? <Spinner size='2.5em' color='gray' /> :
+                posts ? posts.map((post, index) => <Postcard post={post} key={index} />) :
+                errors && <PostError errors={errors} />
+            }
             </main>
         </section>
     );

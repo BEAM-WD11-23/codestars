@@ -38,6 +38,6 @@ function useFetch(endpoint) {
 
     }, [endpoint])
 
-    return {isPending, data, errors, status, setErrors}
+    return {isPending, data, errors, status}
 }
 export default useFetch
