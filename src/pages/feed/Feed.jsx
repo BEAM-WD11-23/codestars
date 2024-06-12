@@ -1,20 +1,19 @@
 import Header from '../../components/header/Header';
 import Postcard from '../../components/postcard/Postcard';
+import { getPosts } from '../../services/post.service';
 import './Feed.css';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'boxicons/css/boxicons.min.css';
 
 const Feed = () => {
+    const {posts, isPending, errors} = getPosts()
+
     return (
         <section className="Feed">
             <Header />
             <main>
-                <Postcard />
-                <Postcard />
-                <Postcard />
-                <Postcard />
-                <Postcard />
+                {posts && posts.map((post, index) => <Postcard post={post} key={index} />)}
             </main>
         </section>
     );
