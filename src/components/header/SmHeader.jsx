@@ -4,7 +4,7 @@ import './SmHeader.css'
 function SmHeader() {
     return (
         <>
-            <header className="Header">
+            <header className="SmHeader">
                 <div className="main-container">
                     <div className="wrapper-logo" style={{ color: "white" }}>
                         <div>CODESTARS</div>

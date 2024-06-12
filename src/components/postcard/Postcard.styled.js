@@ -33,7 +33,6 @@ export const Footer = styled.div`
     height: 80px;
     padding: 10px;
     box-shadow: none;
-    margin-bottom: 100px;
     /* background-color: lightcoral; */
 `
 

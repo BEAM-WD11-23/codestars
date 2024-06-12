@@ -1,7 +1,5 @@
-body{
-    background-color: rgb(255, 255, 255);
-}
-header{
+
+.Header{
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
@@ -10,21 +8,21 @@ header{
     border: 1px solid white;
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-
 }
+
 .main-container {
     width: 100%;
     display:flex;
     justify-content: space-between;
     padding: 10px;
     box-sizing: border-box;
-
-
 }
+
 .wrapper-following-section{
     display: flex;
     justify-content: center;
 }
+
 .for-you-section{
     display: flex;
     border-radius: 35px;
@@ -32,8 +30,8 @@ header{
     justify-content: center;
     gap: 1rem;
     height: 30px;
-    
 }
+
 .fol{
     border: 1px solid rgb(184, 178, 178);
     border-radius: 25px;

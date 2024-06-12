@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import MessageCard from "../components/MessageCard/MessageCard";
-import accountImage from "../components/header/Assets/A.png";
-import accountImageB from "../components/header/Assets/B.png";
-import accountImageC from "../components/header/Assets/C.png";
-import SmHeader from "../components/header/SmHeader";
-import Navigation from "../components/navigation/Navigation";
+import MessageCard from "../../components/MessageCard/MessageCard";
+import accountImage from "../../components/header/Assets/A.png";
+import accountImageB from "../../components/header/Assets/B.png";
+import accountImageC from "../../components/header/Assets/C.png";
+import SmHeader from "../../components/header/SmHeader";
 
 const Messages = () => {
   

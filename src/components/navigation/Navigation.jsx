@@ -6,9 +6,9 @@ function Navigation() {
   const location = useLocation();
   const [activeBtnIndex, setActiveBtnIndex] = useState(location.pathname); // Assuming "New Post" is initially active
 
-  useEffect(()=>{
-    console.log('Navigation created.');
-  },[])
+  // useEffect(()=>{
+  //   console.log('Navigation created.'); Emply useEffect with a clg for troubleshooting how many times this component is beng created/re-rendered
+  // },[])
 
   useEffect(() => {
     switch (location.pathname) {
@@ -28,7 +28,7 @@ function Navigation() {
         setActiveBtnIndex(4);
         break;
       default:
-        setActiveBtnIndex(null);
+        setActiveBtnIndex(2);
     }
   }, [location.pathname]);
 
@@ -48,7 +48,7 @@ function Navigation() {
               onClick={() => handleNavClick(0)}
             >
               <i className='bx bx-home'></i>
-              <span className="title">Home</span>
+              <span className="title">Feed</span>
             </Link>
           </li>
           <li>

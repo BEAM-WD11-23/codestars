@@ -1,7 +1,6 @@
-import Postcard from '../components/postcard/Postcard';
-import Navigation from '../components/navigation/Navigation';
+import Header from '../../components/header/Header';
+import Postcard from '../../components/postcard/Postcard';
 import './Feed.css';
-import Header from '../components/header/Header';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'boxicons/css/boxicons.min.css';
@@ -11,6 +10,10 @@ const Feed = () => {
         <section className="Feed">
             <Header />
             <main>
+                <Postcard />
+                <Postcard />
+                <Postcard />
+                <Postcard />
                 <Postcard />
             </main>
         </section>

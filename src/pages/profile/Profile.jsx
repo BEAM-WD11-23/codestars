@@ -1,5 +1,4 @@
 import Header from '/src/components/header/Header.jsx'
-import Navigation from '/src/components/navigation/Navigation.jsx'
 import Postcard from '../../components/postcard/Postcard.jsx'
 import "/src/pages/profile/Profile.css"
 
