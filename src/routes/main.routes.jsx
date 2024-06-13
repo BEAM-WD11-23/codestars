@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 
 import App from '../App';
 import Notifications from '../pages/notifications/Notifications';
@@ -14,19 +14,39 @@ import NavigationLayout from "../layouts/NavigationLayout";
 import Profile from "../pages/profile/Profile";
 
 
-export const router = createBrowserRouter([
-    {element: <App />, errorElement: <PageNotFound />, children: [
-        {element: <NavigationLayout />, children: [
-            {path: "/", element: <Feed />},
-            {path: "search", element: <PageNotFound />},
-            {path: "create-post", element: <NewPostForm />},
-            {path: "messages", element: <Messages />},
-            {path: "notifications", element: <Notifications />},
-            {path: "profile", element: <Profile />},
-        ]},
-        {path: "register", element: <RegistrationFormik />},
-        {path: "daniel", element: <UserRow />},
-        {path: "daniel2", element: <MessageBubbleComponent/>},
-        {path: "daniel3", element: <Form_Messages/>},
-    ]},
-])
+// export const router = createBrowserRouter([
+//     {element: <App />, errorElement: <PageNotFound />, children: [
+//         {element: <NavigationLayout />, children: [
+//             {path: "/", element: <Feed />},
+//             {path: "search", element: <PageNotFound />},
+//             {path: "create-post", element: <NewPostForm />},
+//             {path: "messages", element: <Messages />},
+//             {path: "notifications", element: <Notifications />},
+//             {path: "profile", element: <Profile />},
+//         ]},
+//         {path: "register", element: <RegistrationFormik />},
+//         {path: "daniel", element: <UserRow />},
+//         {path: "daniel2", element: <MessageBubbleComponent/>},
+//         {path: "daniel3", element: <Form_Messages/>},
+//     ]},
+// ])
+
+
+export const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={<App />} errorElement={<PageNotFound />}>
+            <Route element={<NavigationLayout />}>
+                <Route index element={<Feed />}/>
+                <Route path="search" element={<PageNotFound/>}/>
+                <Route path="create-post" element={<NewPostForm/>}/>
+                <Route path="messages" element={<Messages/>}/>
+                <Route path="notifications" element={<Notifications/>}/>
+                <Route path="profile" element={<Profile />}/>
+            </Route>
+            <Route path="register" element={<RegistrationFormik/>}/>
+            <Route path="daniel" element={<UserRow/>}/>
+            <Route path="daniel2" element={<MessageBubbleComponent/>}/>
+            <Route path="daniel3" element={<Form_Messages/>}/>
+        </Route>
+    )
+)
