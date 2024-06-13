@@ -1,43 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MessageCard from "../../components/MessageCard/MessageCard";
-import accountImage from "../../components/header/Assets/A.png";
-import accountImageB from "../../components/header/Assets/B.png";
-import accountImageC from "../../components/header/Assets/C.png";
+// import accountImage from "../../components/header/Assets/A.png";
+// import accountImageB from "../../components/header/Assets/B.png";
+// import accountImageC from "../../components/header/Assets/C.png";
 import SmHeader from "../../components/header/SmHeader";
+import { getAllMessages } from "../../services/messages.service";
+
 
 const Messages = () => {
-  
+  const {messages,isPending,errors} = getAllMessages()
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredMessages, setFilteredMessages] = useState(null)
+
   
-  const messages = [
-    {
-      id: 1,
-      photo: accountImage,
-      name: "John Doe",
-      message: "Hello! How are you?",
-      timestamp: "Sat",
-    },
-    {
-      id: 2,
-      photo: accountImageB,
-      name: "Mario Rod",
-      message: "Hello! How are you?",
-      timestamp: "Wed",
-    },
-    {
-      id: 3,
-      photo: accountImageC,
-      name: "Richard S.",
-      message: "Are you here?",
-      timestamp: "Tue",
-    },
-  ];
+  useEffect(()=>{
+    if (messages) {
+      const result = messages.filter(
+        (msg) =>
+          (msg.firstname.toLowerCase()+ msg.lastname.toLowerCase()).includes(searchQuery.toLowerCase()) ||
+        msg.message.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredMessages(result)
+    }
+  },[messages, filteredMessages])
   
-  const filteredMessages = messages.filter(
-    (msg) =>
-      msg.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    msg.message.toLowerCase().includes(searchQuery.toLowerCase())
-  );
   
   return (
     <div>
@@ -67,11 +53,11 @@ const Messages = () => {
           }}
         />
       </div>
-      {filteredMessages.map((msg) => (
+      {filteredMessages && filteredMessages.map((msg) => (
         <MessageCard
           key={msg.id}
-          photo={msg.photo}
-          name={msg.name}
+          // photo={msg.photo}
+          name={msg.firstname + ' ' + msg.lastname}
           message={msg.message}
           timestamp={msg.timestamp}
         />

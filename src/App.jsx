@@ -1,5 +1,6 @@
 import './App.css'
 import { Outlet } from 'react-router'
+import ChatsPage from './pages/Chats/Chats.page';
 
 function App() {
     return (

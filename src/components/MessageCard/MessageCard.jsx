@@ -49,7 +49,7 @@ const Message = styled.p`
 const MessageCard = ({ photo, name, message, timestamp }) => {
   return (
     <Card>
-      <Avatar src={photo} alt={`${name}'s avatar`} />
+      <Avatar  alt={`${name}'s avatar`} />
       <Content>
         <Header>
           <Name>{name}</Name>
