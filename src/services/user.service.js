@@ -1,8 +1,11 @@
-import { USERS_URL } from "../constants/constants"
+import { USERS_ENDPOINT } from "../constants/constants"
 import useFetch from "../hooks/useFetch"
 
-export function getUsers(){
-    const { data:users, errors, isPending, status, setErrors} = useFetch(USERS_URL)
-    if(status === 404) setErrors('Users not found.')
+export function getAllUsers(){
+    const { data:users, errors, isPending} = useFetch(USERS_ENDPOINT)
     return {users, isPending, errors}
+}
+
+export function getUser(id){
+    const { data:user, errors, isPending} = useFetch(USERS_ENDPOINT+"/"+id)
 }

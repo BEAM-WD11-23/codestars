@@ -20,8 +20,6 @@ import { Carousel } from "@material-tailwind/react";
 function Postcard({post}) {
   const [isExpanded, setIsExpanded] = useState(false)
 
-  console.log(post);
-
   function handleReadMoreLess(){
     setIsExpanded(!isExpanded)
   }
