@@ -13,25 +13,6 @@ import RegistrationFormik from '../pages/RegistrationForm/RegistrationForm';
 import NavigationLayout from "../layouts/NavigationLayout";
 import Profile from "../pages/profile/Profile";
 
-
-// export const router = createBrowserRouter([
-//     {element: <App />, errorElement: <PageNotFound />, children: [
-//         {element: <NavigationLayout />, children: [
-//             {path: "/", element: <Feed />},
-//             {path: "search", element: <PageNotFound />},
-//             {path: "create-post", element: <NewPostForm />},
-//             {path: "messages", element: <Messages />},
-//             {path: "notifications", element: <Notifications />},
-//             {path: "profile", element: <Profile />},
-//         ]},
-//         {path: "register", element: <RegistrationFormik />},
-//         {path: "daniel", element: <UserRow />},
-//         {path: "daniel2", element: <MessageBubbleComponent/>},
-//         {path: "daniel3", element: <Form_Messages/>},
-//     ]},
-// ])
-
-
 export const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<App />} errorElement={<PageNotFound />}>
@@ -50,3 +31,20 @@ export const router = createBrowserRouter(
         </Route>
     )
 )
+
+// export const router = createBrowserRouter([
+//     {element: <App />, errorElement: <PageNotFound />, children: [
+//         {element: <NavigationLayout />, children: [
+//             {path: "/", element: <Feed />},
+//             {path: "search", element: <PageNotFound />},
+//             {path: "create-post", element: <NewPostForm />},
+//             {path: "messages", element: <Messages />},
+//             {path: "notifications", element: <Notifications />},
+//             {path: "profile", element: <Profile />},
+//         ]},
+//         {path: "register", element: <RegistrationFormik />},
+//         {path: "daniel", element: <UserRow />},
+//         {path: "daniel2", element: <MessageBubbleComponent/>},
+//         {path: "daniel3", element: <Form_Messages/>},
+//     ]},
+// ])
