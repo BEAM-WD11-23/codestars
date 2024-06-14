@@ -52,16 +52,14 @@ function Postcard({post}) {
       </Header>
       <Body>
       <Carousel>
-          <img
-            className="Postcard__image"
-            src={postPicture}
-            alt="Post Image"
-          />
-          <img
-            className="Postcard__image"
-            src={postPicture}
-            alt="Post Image"
-          />
+          {post.images.map((img, index) => (
+            <img
+              key={index}
+              className="Postcard__image"
+              src={img}
+              alt="Post Image"
+            />
+          ))}
         </Carousel>
         <TextWrapper>
           <Title>{post.title}</Title>

@@ -7,6 +7,12 @@ function useFetch(endpoint) {
     const [errors, setErrors] = useState(null)
     const [status, setStatus] = useState(null)
 
+    // const options = {
+    //     method: config?.method?.toUpperCase(),
+    //     headers: {"Content-Type":"application/json"},
+    //     body: JSON.stringify(config?.data)
+    // }
+
     const customErrorMessage = {
         401: "You are not authenticated",
         403: "You are not allowed to access this resources",
@@ -41,3 +47,26 @@ function useFetch(endpoint) {
     return {isPending, data, errors, status}
 }
 export default useFetch
+
+
+
+/**
+ * fetch for GET => fetch(endpoint)
+ * 
+ * fetch for POST => fetch(endpoint, {
+ *      method: "POST",
+ *      headers: {"Content-Type":"application/json"},
+ *      body: JSON.stringify(whateverThatDataIs)
+ * })
+ * 
+ * fetch for PUT => fetch(endpoint/id, {
+ *      method: "PUT",
+ *      headers: {"Content-Type":"application/json"},
+ *      body: JSON.stringify(updatedVersionVal)
+ * })
+ * 
+ * fetch for DELETE => fetch(endpoint/id, {
+ *      method: "DELETE",
+ * })
+ * 
+ */

@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import 'tailwindcss/tailwind.css';
-import Navigation from '../../components/navigation/Navigation';
+import { LOGGEDIN_USER_ID } from '../../constants/constants';
+import { createPost } from '../../services/post.service';
 
 // Define the validation schema using Yup
 const validationSchema = Yup.object({
   title: Yup.string()
     .max(50, 'Title must be 50 characters or less')
     .required('Title is required'),
-  url: Yup.string()
+  images: Yup.string()
     .url('Invalid URL format')
     .required('URL is required'),
   content: Yup.string()
@@ -18,11 +19,14 @@ const validationSchema = Yup.object({
 });
 
 const NewPostForm = () => {
+  const [postSaved, setPostSaved] = useState(false)
+  const [saveError, setSaveError] = useState(null)
   // Define initial form values
   const initialValues = {
     title: '',
-    url: '',
+    images: '',
     content: '',
+    uid: LOGGEDIN_USER_ID
   };
 
   // Handle form submission
@@ -30,9 +34,19 @@ const NewPostForm = () => {
     console.log('Form data', values);
     setTimeout(() => {
       // Simulate submitting to a server
-      alert(JSON.stringify(values, null, 2));
+      console.log(JSON.stringify(values, null, 2));
+      
+      createPost({...values, images:[values.images]}).then(success => {
+        setPostSaved(true)
+        setSaveError(null)
+        resetForm();
+      })
+      .catch(error => {
+        setPostSaved(false)
+        setSaveError(error.message)
+      })
+
       setSubmitting(false);
-      resetForm();
     }, 400);
   };
 
@@ -63,7 +77,7 @@ const NewPostForm = () => {
                   URL
                 </label>
                 <Field
-                  name="url"
+                  name="images"
                   type="text"
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />

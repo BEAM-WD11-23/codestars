@@ -57,11 +57,9 @@ const Messages = () => {
         />
       </div>
       {isPending ? <Spinner /> :
-      conversations ? (Object.entries(conversations)).map((conversation, index) => (
-        <MessageCard
-          key={index}
-          conversation={conversation}
-        />
+      conversations ? (Object.entries(conversations))
+      .map((conversation, index) => (
+        <MessageCard key={index} conversation={conversation}/>
       )) : errors && <PostError />}
     </div>
   );
