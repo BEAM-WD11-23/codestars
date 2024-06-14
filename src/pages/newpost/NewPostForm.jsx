@@ -9,6 +9,9 @@ const validationSchema = Yup.object({
   title: Yup.string()
     .max(50, 'Title must be 50 characters or less')
     .required('Title is required'),
+  url: Yup.string()
+    .url('Invalid URL format')
+    .required('URL is required'),
   content: Yup.string()
     .min(20, 'Content must be at least 20 characters')
     .required('Content is required'),
@@ -18,6 +21,7 @@ const NewPostForm = () => {
   // Define initial form values
   const initialValues = {
     title: '',
+    url: '',
     content: '',
   };
 
@@ -53,6 +57,17 @@ const NewPostForm = () => {
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
                 <ErrorMessage name="title" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+              <div>
+                <label htmlFor="url" className="block text-sm font-medium text-gray-700">
+                  URL
+                </label>
+                <Field
+                  name="url"
+                  type="text"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+                <ErrorMessage name="url" component="div" className="text-red-500 text-sm mt-1" />
               </div>
               <div>
                 <label htmlFor="content" className="block text-sm font-medium text-gray-700">
