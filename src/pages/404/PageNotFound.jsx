@@ -11,7 +11,7 @@ const PageNotFound = () => {
       <img src={dinosaur404} alt="404 dinosaur" className="mt-4 w-full h-auto" />
       <Link
         to="/"
-        className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+        className="mt-6 px-4 py-2 bg-navBg text-white rounded-md hover:bg-blue-600"
       >
         Go to Homepage
       </Link>
