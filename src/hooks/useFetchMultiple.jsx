@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 export function useFetchMultiple(endpointArray) {
 
     const [isPending, setIsPending] = useState(true)
     const [combinedData, setCombinedData] = useState(null)
     const [errors, setErrors] = useState(null)
+    const [refetch, setRefetch] = useState(0)
+
+    const refresh = useCallback(() => setRefetch(prev => ++prev),[])
 
     useEffect(()=>{
         setIsPending(true) //(make sure 100%) in every new request isPending is true by default
@@ -33,8 +36,8 @@ export function useFetchMultiple(endpointArray) {
         else{
             throw new Error("You MUST pass an array to useFetchMultiple hook. 'endpointArray' is not an array")
         }
-    },[])
+    },[refetch])
 
-    return {isPending, combinedData, errors}
+    return {isPending, combinedData, errors, refresh}
 }
 export default useFetchMultiple

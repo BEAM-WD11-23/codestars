@@ -1,10 +1,13 @@
 
+import { useEffect } from "react";
 import { MESSAGES_ENDPOINT, USERS_ENDPOINT } from "../constants/constants";
 import useFetchMultiple from "../hooks/useFetchMultiple";
 
-export function getAllMessages(){
+export function useAllMessages(){
+   useEffect(() => console.log(":::useallMessages executed:::"),[])
+   
    let fullMessages = null
-   const {isPending, combinedData, errors } = useFetchMultiple([MESSAGES_ENDPOINT, USERS_ENDPOINT])
+   const {isPending, combinedData, errors, refresh } = useFetchMultiple([MESSAGES_ENDPOINT, USERS_ENDPOINT])
 
    if(combinedData){
       // this map is combining/extending existing message object (as a base) with name and profile pic from sender and receiver
@@ -24,7 +27,7 @@ export function getAllMessages(){
       fullMessages = result;
    }
 
-   return {isPending, messages:fullMessages, errors}
+   return {isPending, messages:fullMessages, errors, refresh}
 }
 
 // {

@@ -4,11 +4,11 @@ import MessageCard from "../../components/MessageCard/MessageCard";
 // import accountImageB from "../../components/header/Assets/B.png";
 // import accountImageC from "../../components/header/Assets/C.png";
 import SmHeader from "../../components/header/SmHeader";
-import { getAllMessages } from "../../services/messages.service";
+import { useAllMessages } from "../../services/messages.service";
 
 
 const Messages = () => {
-  const {messages,isPending,errors} = getAllMessages()
+  const {messages,isPending,errors} = useAllMessages()
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredMessages, setFilteredMessages] = useState(null)
 
