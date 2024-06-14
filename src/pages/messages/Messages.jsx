@@ -4,25 +4,28 @@ import MessageCard from "../../components/MessageCard/MessageCard";
 // import accountImageB from "../../components/header/Assets/B.png";
 // import accountImageC from "../../components/header/Assets/C.png";
 import SmHeader from "../../components/header/SmHeader";
-import { useAllMessages } from "../../services/messages.service";
+import { useConversations } from "../../services/messages.service";
+import Spinner from "../../components/spinner/Spinner";
+import PostError from "../../components/postError/PostError";
 
 
 const Messages = () => {
-  const {messages,isPending,errors} = useAllMessages()
+  const { isPending, conversations, errors, refresh } = useConversations()
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredMessages, setFilteredMessages] = useState(null)
 
-  
-  useEffect(()=>{
-    if (messages) {
-      const result = messages.filter(
-        (msg) =>
-          (msg.firstname.toLowerCase()+ msg.lastname.toLowerCase()).includes(searchQuery.toLowerCase()) ||
-        msg.message.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredMessages(result)
-    }
-  },[messages, filteredMessages])
+  // Object.entries(conversations) => converts object into an array
+
+  // useEffect(()=>{
+  //   if (conversations) {
+  //     const result = messages.filter(
+  //       (msg) =>
+  //         (msg.firstname.toLowerCase()+ msg.lastname.toLowerCase()).includes(searchQuery.toLowerCase()) ||
+  //       msg.message.toLowerCase().includes(searchQuery.toLowerCase())
+  //     );
+  //     setFilteredMessages(result)
+  //   }
+  // },[conversations, filteredMessages])
   
   
   return (
@@ -53,17 +56,28 @@ const Messages = () => {
           }}
         />
       </div>
-      {filteredMessages && filteredMessages.map((msg) => (
+      {isPending ? <Spinner /> :
+      conversations ? (Object.entries(conversations)).map((conversation, index) => (
         <MessageCard
-          key={msg.id}
-          // photo={msg.photo}
-          name={msg.firstname + ' ' + msg.lastname}
-          message={msg.message}
-          timestamp={msg.timestamp}
+          key={index}
+          conversation={conversation}
         />
-      ))}
+      )) : errors && <PostError />}
     </div>
   );
 };
 
 export default Messages;
+
+// {
+//    "mid": "1"
+//    "sender": "fname lname"
+//    "receiver": "fname lname"
+//    "senderPic": "path"
+//    "receiverPic": "path"
+//    "senderUid": "1",
+//    "recepientUid": "2",
+//    "message": "Hey darling, are you coming?",
+//    "images": "[]",
+//    "timestamp": 1718284289,
+//  }

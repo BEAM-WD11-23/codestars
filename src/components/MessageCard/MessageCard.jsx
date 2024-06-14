@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { LOGGEDIN_USER_ID } from '../../constants/constants';
 
 const Card = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const Card = styled.div`
 `;
 
 const Avatar = styled.img`
+  object-fit: cover;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -46,16 +48,25 @@ const Message = styled.p`
   font-weight: bold;
 `;
 
-const MessageCard = ({ photo, name, message, timestamp }) => {
+const MessageCard = ({ conversation }) => {
+  const [idOfOtherUser, chatsArray]= conversation;
+  const latestChat = chatsArray[0]
+  const otherUserName = (latestChat.senderUid === LOGGEDIN_USER_ID) ? latestChat.receiver : latestChat.sender
+  const otherUserPic = (latestChat.senderUid === LOGGEDIN_USER_ID) ? latestChat.receiverPic : latestChat.senderPic
+  
+  console.log("idOfOtherUser: ", idOfOtherUser);
+  console.log("latestChat: ", latestChat);
+  console.log("otherUserName: ", otherUserName);
+  console.log("otherUserPic: ", otherUserPic);
   return (
     <Card>
-      <Avatar  alt={`${name}'s avatar`} />
+      <Avatar src={otherUserPic} alt={`${otherUserName}'s avatar`} />
       <Content>
         <Header>
-          <Name>{name}</Name>
-          <Timestamp>{timestamp}</Timestamp>
+          <Name>{otherUserName}</Name>
+          <Timestamp>{new Date(latestChat.timestamp).getHours()+":"+new Date(latestChat.timestamp).getMinutes()}</Timestamp>
         </Header>
-        <Message>{message}</Message>
+        <Message>{latestChat.message}</Message>
       </Content>
     </Card>
   );

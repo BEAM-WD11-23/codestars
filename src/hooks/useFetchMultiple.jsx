@@ -11,7 +11,7 @@ export function useFetchMultiple(endpointArray) {
 
     useEffect(()=>{
         setIsPending(true) //(make sure 100%) in every new request isPending is true by default
-        
+            
         if(Array.isArray(endpointArray)){
             const allStartedPromises = endpointArray.map(endpoint => {
                 return fetch(endpoint)
