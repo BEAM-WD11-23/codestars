@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useCallback, useEffect, useState } from "react"
 
 export function useFetchMultiple(endpointArray) {
@@ -12,21 +13,19 @@ export function useFetchMultiple(endpointArray) {
     useEffect(()=>{
         setIsPending(true) //(make sure 100%) in every new request isPending is true by default
         if(Array.isArray(endpointArray)){
+
             const allStartedPromises = endpointArray.map(endpoint => {
-                return fetch(endpoint)
-                .then(response => {
-                    if(response.ok) return response.json()
-                    throw new Error(response.statusText)
-                })
+                return axios.get(endpoint)
             })
     
             const allPromises = Promise.all(allStartedPromises)
-            allPromises.then(combinedData => {
+            allPromises.then(responses => {
                 setIsPending(false)
-                setCombinedData(combinedData)
+                setCombinedData(responses.map(response => response.data))
                 setErrors(null)
             })
             .catch(err => {
+                console.log(err);
                 setIsPending(false)
                 setCombinedData(null)
                 setErrors(err.message)
@@ -40,3 +39,6 @@ export function useFetchMultiple(endpointArray) {
     return {isPending, combinedData, errors, refresh}
 }
 export default useFetchMultiple
+
+
+// axios

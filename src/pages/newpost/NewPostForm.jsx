@@ -23,34 +23,35 @@ const validationSchema = Yup.object().shape({
 )
 
 const NewPostForm = () => {
-  const [postSaved, setPostSaved] = useState(false)
-  const [saveError, setSaveError] = useState(null)
-  // Define initial form values
-  const initialValues = {
-    title: '',
-    images: '',
-    content: '',
-    uid: LOGGEDIN_USER_ID
-  };
+    const [postSaved, setPostSaved] = useState(false)
+    const [saveError, setSaveError] = useState(null)
+    // Define initial form values
+    const initialValues = {
+        title: '',
+        images: '',
+        content: '',
+        uid: LOGGEDIN_USER_ID
+    };
 
   // Handle form submission
   const onSubmit = (values, { setSubmitting, resetForm }) => {
     console.log('Form data', values);
     setTimeout(() => {
-      // Simulate submitting to a server
-      console.log(JSON.stringify(values, null, 2));
-      
-      createPost({...values, images:(values.images?[values.images]:[])}).then(success => {
-        setPostSaved(true)
-        setSaveError(null)
-        resetForm();
-      })
-      .catch(error => {
-        setPostSaved(false)
-        setSaveError(error.message)
-      })
+        // Simulate submitting to a server
+        console.log(JSON.stringify(values, null, 2));
+        
+        createPost({...values, images:(values.images?[values.images]:[])})
+        .then(success => {
+            setPostSaved(true)
+            setSaveError(null)
+            resetForm();
+        })
+        .catch(error => {
+            setPostSaved(false)
+            setSaveError(error.message)
+        })
 
-      setSubmitting(false);
+        setSubmitting(false);
     }, 400);
   };
 

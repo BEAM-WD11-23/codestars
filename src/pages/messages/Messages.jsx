@@ -60,7 +60,7 @@ const Messages = () => {
       conversations ? (Object.entries(conversations))
       .map((conversation, index) => (
         <MessageCard key={index} conversation={conversation}/>
-      )) : errors && <PostError />}
+      )) : errors && <PostError errors={errors} />}
     </div>
   );
 };
