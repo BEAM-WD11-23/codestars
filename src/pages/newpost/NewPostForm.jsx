@@ -6,17 +6,21 @@ import { LOGGEDIN_USER_ID } from '../../constants/constants';
 import { createPost } from '../../services/post.service';
 
 // Define the validation schema using Yup
-const validationSchema = Yup.object({
+const validationSchema = Yup.object().shape({
   title: Yup.string()
-    .max(50, 'Title must be 50 characters or less')
-    .required('Title is required'),
+    .max(50, 'Title must be 50 characters or less'),
   images: Yup.string()
-    .url('Invalid URL format')
-    .required('URL is required'),
+    .url('Invalid URL format'),
   content: Yup.string()
-    .min(20, 'Content must be at least 20 characters')
-    .required('Content is required'),
-});
+    .min(20, 'Content must be at least 20 characters'),
+}).test(
+  'at-least-one',
+  'At least one of these fields must be filled: title, images, content.',
+  function (values) {
+    const { title, images, content } = values;
+    return !!(title || images || content);
+  }
+)
 
 const NewPostForm = () => {
   const [postSaved, setPostSaved] = useState(false)
@@ -36,7 +40,7 @@ const NewPostForm = () => {
       // Simulate submitting to a server
       console.log(JSON.stringify(values, null, 2));
       
-      createPost({...values, images:[values.images]}).then(success => {
+      createPost({...values, images:(values.images?[values.images]:[])}).then(success => {
         setPostSaved(true)
         setSaveError(null)
         resetForm();

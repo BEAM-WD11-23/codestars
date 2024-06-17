@@ -12,23 +12,29 @@ import NewPostForm from "../pages/newpost/NewPostForm";
 import RegistrationFormik from '../pages/RegistrationForm/RegistrationForm';
 import NavigationLayout from "../layouts/NavigationLayout";
 import Profile from "../pages/profile/Profile";
+import UserProvider from "../contexts/user.context";
+import MessageProvider from "../contexts/message.context";
+import PostProvider from "../contexts/post.context";
+import MainProvider from "../contexts/main.provider";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<App />} errorElement={<PageNotFound />}>
-            <Route element={<NavigationLayout />}>
-                <Route index element={<Feed />}/>
-                <Route path="search" element={<PageNotFound/>}/>
-                <Route path="create-post" element={<NewPostForm/>}/>
-                <Route path="messages" element={<Messages/>}/>
-                <Route path="notifications" element={<Notifications/>}/>
-                <Route path="profile" element={<Profile />}/>
-            </Route>
-            <Route path="register" element={<RegistrationFormik/>}/>
-            <Route path="daniel" element={<UserRow/>}/>
-            <Route path="daniel2" element={<MessageBubbleComponent/>}/>
-            <Route path="daniel3" element={<Form_Messages/>}/>
-        </Route>
+                <Route element={<MainProvider providers={[UserProvider, MessageProvider, PostProvider]} />}>
+                    <Route path="/" element={<App />} errorElement={<PageNotFound />}>
+                        <Route element={<NavigationLayout />}>
+                            <Route index element={<Feed />}/>
+                            <Route path="search" element={<PageNotFound/>}/>
+                            <Route path="create-post" element={<NewPostForm/>}/>
+                            <Route path="messages" element={<Messages/>}/>
+                            <Route path="notifications" element={<Notifications/>}/>
+                            <Route path="profile" element={<Profile />}/>
+                        </Route>
+                        <Route path="register" element={<RegistrationFormik/>}/>
+                        <Route path="daniel" element={<UserRow/>}/>
+                        <Route path="daniel2" element={<MessageBubbleComponent/>}/>
+                        <Route path="daniel3" element={<Form_Messages/>}/>
+                    </Route>
+                </Route>
     )
 )
 

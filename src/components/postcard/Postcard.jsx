@@ -51,7 +51,7 @@ function Postcard({post}) {
         </Menu>
       </Header>
       <Body>
-      <Carousel>
+      {post.images.length > 0 && <Carousel>
           {post.images.map((img, index) => (
             <img
               key={index}
@@ -60,9 +60,9 @@ function Postcard({post}) {
               alt="Post Image"
             />
           ))}
-        </Carousel>
+        </Carousel>}
         <TextWrapper>
-          <Title>{post.title}</Title>
+          {post.title && <Title>{post.title}</Title>}
           <Text $truncate={!isExpanded} animate={isExpanded ? {height:'auto', } : {height:'fit-content'}} >
             {post.content}
           </Text>

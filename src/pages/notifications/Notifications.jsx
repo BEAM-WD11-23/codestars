@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Navigation from '../../components/navigation/Navigation';
+import React, { useContext, useState } from 'react';
+import { PostContext } from '../../contexts/post.context';
 
 const notifications = [
   {
