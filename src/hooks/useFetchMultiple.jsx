@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useCallback, useEffect, useState } from "react"
 
-export function useFetchMultiple(endpointArray) {
+export function useFetchMultiple(urlArray) {
 
     const [isPending, setIsPending] = useState(true)
     const [combinedData, setCombinedData] = useState(null)
@@ -12,31 +12,31 @@ export function useFetchMultiple(endpointArray) {
 
     useEffect(()=>{
         setIsPending(true) //(make sure 100%) in every new request isPending is true by default
-        if(Array.isArray(endpointArray)){
+        if(Array.isArray(urlArray)){
 
-            const allStartedPromises = endpointArray.map(endpoint => {
-                return axios.get(endpoint)
+            const allStartedPromises = urlArray.map(url => {
+                return axios.get(url)
             })
     
-            const allPromises = Promise.all(allStartedPromises)
-            allPromises.then(responses => {
-                setIsPending(false)
+            const mergedPromise = Promise.all(allStartedPromises)
+            mergedPromise.then(responses => {
                 setCombinedData(responses.map(response => response.data))
                 setErrors(null)
             })
             .catch(err => {
-                console.log(err);
-                setIsPending(false)
                 setCombinedData(null)
                 setErrors(err.message)
             })
+            .then(()=>{
+                setIsPending(false)
+            })
         }
         else{
-            throw new Error("You MUST pass an array to useFetchMultiple hook. 'endpointArray' is not an array")
+            throw new Error("You MUST pass an array to useFetchMultiple hook. 'urlArray' is not an array")
         }
-    },[refetch])
+    }, [refetch])
 
-    return {isPending, combinedData, errors, refresh}
+    return { isPending, combinedData, errors, refresh }
 }
 export default useFetchMultiple
 

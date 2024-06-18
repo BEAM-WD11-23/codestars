@@ -3,8 +3,9 @@ import { POSTS_ENDPOINT, POSTS_URL } from "../constants/constants";
 import useFetch from "../hooks/useFetch";
 
 export function usePosts(){
-    const { data:posts, errors, isPending, status} = useFetch(POSTS_URL)
-    return {posts, isPending, errors, status}
+    const { isPending, data:posts, errors, refresh } = useFetch(POSTS_URL)
+
+    return { isPending, posts, errors, refresh }
 }
 
 export function createPost(postData){

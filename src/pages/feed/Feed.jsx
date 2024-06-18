@@ -10,7 +10,8 @@ import './Feed.css';
 // import 'boxicons/css/boxicons.min.css';
 
 const Feed = () => {
-    const {posts, isPending, errors} = usePosts()
+    const { isPending, posts, errors, refresh } = usePosts()
+    
     useEffect(()=>{console.log(posts)},[posts])
     return (
         <section className="Feed">

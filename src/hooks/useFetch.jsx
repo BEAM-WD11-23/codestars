@@ -1,51 +1,34 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
+import axios from "axios";
+import { useCallback, useEffect, useState } from "react";
 
-function useFetch(endpoint) {
+
+function useFetch(url){
     const [isPending, setIsPending] = useState(true)
     const [data, setData] = useState(null)
     const [errors, setErrors] = useState(null)
-    const [status, setStatus] = useState(null)
+    const [refetch, setRefetch] = useState(0)
+
+    const refresh = useCallback(() => setRefetch(prevState => ++prevState), [])
 
     useEffect(()=>{
-        setIsPending(true) //(make sure 100%) in every new request isPending is true by default
-
-        axios.get(endpoint)
-        .then(response => {
-            setData(response.data)
+        // before starting a new request it should be pending
+        setIsPending(true)
+        //The START of a new request
+        axios.get(url)
+        .then((axiosResponse) => {
+            setData(axiosResponse.data)
             setErrors(null)
         })
-        .catch(err => {
+        .catch((axiosError) => {
             setData(null)
-            setErrors(err.message)
+            setErrors(axiosError.message)
         })
-        .finally(() => setIsPending(false))
+        .finally(() => {
+            setIsPending(false)
+        })
+    }, [refetch])
 
-    }, [])
-
-    return {isPending, data, errors, status}
+    return { isPending, data, errors, refresh }
 }
-export default useFetch
 
-
-
-/**
- * fetch for GET => fetch(endpoint)
- * 
- * fetch for POST => fetch(endpoint, {
- *      method: "POST",
- *      headers: {"Content-Type":"application/json"},
- *      body: JSON.stringify(whateverThatDataIs)
- * })
- * 
- * fetch for PUT => fetch(endpoint/id, {
- *      method: "PUT",
- *      headers: {"Content-Type":"application/json"},
- *      body: JSON.stringify(updatedVersionVal)
- * })
- * 
- * fetch for DELETE => fetch(endpoint/id, {
- *      method: "DELETE",
- * })
- * 
- */
+export default useFetch;

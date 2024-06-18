@@ -7,19 +7,19 @@ import { createPost } from '../../services/post.service';
 
 // Define the validation schema using Yup
 const validationSchema = Yup.object().shape({
-  title: Yup.string()
-    .max(50, 'Title must be 50 characters or less'),
-  images: Yup.string()
-    .url('Invalid URL format'),
-  content: Yup.string()
-    .min(20, 'Content must be at least 20 characters'),
+    title: Yup.string()
+        .max(50, 'Title must be 50 characters or less'),
+    images: Yup.string()
+        .url('Invalid URL format'),
+    content: Yup.string()
+        .min(20, 'Content must be at least 20 characters'),
 }).test(
-  'at-least-one',
-  'At least one of these fields must be filled: title, images, content.',
-  function (values) {
-    const { title, images, content } = values;
-    return !!(title || images || content);
-  }
+    'at-least-one',
+    'At least one of these fields must be filled: title, images, content.',
+    function (values) {
+        const { title, images, content } = values;
+        return !!(title || images || content);
+    }
 )
 
 const NewPostForm = () => {
