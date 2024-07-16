@@ -36,28 +36,26 @@ export const Footer = styled.div`
     /* background-color: lightcoral; */
 `
 
-export const Menu = styled.div`
+export const Menu = styled.button`
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    width: 50px;
-    border: 2px solid #C9C9C9;
-    border-radius: 50%; 
-    background-color: white;
+    padding: .5em 1em;
 `
 
 export const DropdownList = styled.ul`
-    display: none;
+    position: absolute;
+    top: 1.2em;
+    right: -1em;
     border: 1em;
     margin: 1em;
     padding: 1em;
-    width: fit-content;
-    background-color: #416ABB;
     color: white;
-    border-radius: 7%;
+    white-space: nowrap;
+    border-radius: .4em;
     z-index: 100;
+    background-color: #416ABB;
 `
 
 export const ImageWrapper = styled.div`

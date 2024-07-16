@@ -16,6 +16,9 @@ import UserProvider from "../contexts/user.context";
 import MessageProvider from "../contexts/message.context";
 import PostProvider from "../contexts/post.context";
 import ContextProvider from "../contexts/context.provider";
+import Login from "../pages/LogIn/LogIn";
+import TestLogin from "../pages/LogIn/TestLogin";
+import AddFriendTest from "../pages/AddFriendTest";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -29,6 +32,8 @@ export const router = createBrowserRouter(
                             <Route path="messages" element={<Messages/>}/>
                             <Route path="notifications" element={<Notifications/>}/>
                         </Route>
+                        <Route path="add" element={<AddFriendTest/>}/>
+                        <Route path="login" element={<TestLogin/>}/>
                         <Route path="register" element={<RegistrationFormik/>}/>
                         <Route path="daniel" element={<UserRow/>}/>
                         <Route path="daniel2" element={<MessageBubbleComponent/>}/>

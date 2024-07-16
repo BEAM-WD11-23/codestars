@@ -19,10 +19,16 @@ import { Carousel } from "@material-tailwind/react";
 
 function Postcard({post}) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isMenu, setIsMenu] = useState(false)
+
+  function handleMenu(){
+    setIsMenu(!isMenu)
+  }
 
   function handleReadMoreLess(){
     setIsExpanded(!isExpanded)
   }
+
   return (
     <>
     <Wrapper>
@@ -35,9 +41,9 @@ function Postcard({post}) {
           />
           <span className="Postcard__username">username</span>
         </div>
-        <Menu>
+        <Menu onClick={handleMenu}>
           <i className="fa-solid fa-ellipsis" />
-          <DropdownList>
+          {isMenu && <DropdownList>
             <li>
               <a href="#">Report Post</a>
             </li>
@@ -47,7 +53,7 @@ function Postcard({post}) {
             <li>
               <a href="#">Follow</a>
             </li>
-          </DropdownList>
+          </DropdownList>}
         </Menu>
       </Header>
       <Body>

@@ -1,14 +1,21 @@
 import { createContext, useState } from "react";
-import { Outlet } from "react-router";
 
 export const UserContext = createContext(null)
 
 function UserProvider({children}) {
-    const [loggedinUser, setLoggedinUser] = useState("Relando V.")
-  return (
-    <UserContext.Provider value={{loggedinUser, setLoggedinUser}}>
-        {children}
-    </UserContext.Provider>
-  )
+    const [loggedinUser, setLoggedinUser] = useState({
+        uid: "2",
+        createdAt: 1718289241,
+        firstname: "Sara",
+        lastname: "Smith",
+        profilePic: "path/to/pic",
+        age: "40",
+        friends: []
+    })
+    return (
+        <UserContext.Provider value={{loggedinUser, setLoggedinUser}}>
+            {children}
+        </UserContext.Provider>
+    )
 }
 export default UserProvider

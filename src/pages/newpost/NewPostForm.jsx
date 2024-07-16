@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import 'tailwindcss/tailwind.css';
-import { LOGGEDIN_USER_ID } from '../../constants/constants';
 import { createPost } from '../../services/post.service';
+import { UserContext } from '../../contexts/user.context';
 
 // Define the validation schema using Yup
 const validationSchema = Yup.object().shape({
@@ -23,6 +23,7 @@ const validationSchema = Yup.object().shape({
 )
 
 const NewPostForm = () => {
+    const { loggedinUser } = useContext(UserContext)
     const [postSaved, setPostSaved] = useState(false)
     const [saveError, setSaveError] = useState(null)
     // Define initial form values
@@ -30,7 +31,7 @@ const NewPostForm = () => {
         title: '',
         images: '',
         content: '',
-        uid: LOGGEDIN_USER_ID
+        uid: loggedinUser.uid
     };
 
   // Handle form submission
