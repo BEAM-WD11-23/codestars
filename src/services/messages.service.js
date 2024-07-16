@@ -1,6 +1,6 @@
 
 import { useContext, useEffect } from "react";
-import { MESSAGES_ENDPOINT, USERS_ENDPOINT } from "../constants/constants";
+import { MESSAGES_ENDPOINT, USERS_ENDPOINT } from "../config/constants";
 import useFetchMultiple from "../hooks/useFetchMultiple";
 import { UserContext } from "../contexts/user.context";
 

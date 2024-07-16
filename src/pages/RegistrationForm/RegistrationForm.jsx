@@ -4,16 +4,23 @@ import { Formik, Form, ErrorMessage, validateYupSchema, Field } from "formik"
 import * as Yup from 'yup'
 import styled from "styled-components"
 import { Wrapper, InputWrapper, RegForm, Fieldset, CheckboxLabel, Checkbox, SubmitBtn } from './RegistrationForm.styled';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { BACKEND_HOST } from '../../config/constants';
 
 
 function RegistrationFormik(){
+  const [message, setMessage] = useState(null)
+  const [error, setError] = useState(null)
  
   const initialValues = {
     username: '',
     email: '',
+    firstName: '',
+    lastName: '',
+    dateOfBirth: new Date(),
     password: '',
     confirmPassword: '',
-    telephone: '',
     acceptTerms: false
   }
 
@@ -22,13 +29,27 @@ function RegistrationFormik(){
     email: Yup.string().email('Invalid email.').required('Email is required.'),
     password: Yup.string().required('Create a strong and valid password.'),
     confirmPassword: Yup.string().required('Password confirmation did not match.'),
-    telephone: Yup.string().matches(/^(00|\+)[\d]{7,12}$/, 'This is not a valid phone number.'),
     acceptTerms: Yup.boolean().oneOf([true], 'You MUST accept the Terms to proceed.')
 })
 
-function submitFn(values){
+async function submitFn(values, { resetForm, setSubmitting }){
+  setSubmitting(true)
+  delete values.acceptTerms
 
-  console.log(values);
+  try {
+    const result = await axios.post(`${BACKEND_HOST}/api/auth/register`, values)
+    setError(null)
+    setMessage(result?.data?.message)
+    resetForm()
+    console.log(result)
+  }
+  catch(axiosError){
+    setMessage(null)
+    setError(`Registration Failed. Reason: ${axiosError?.response?.data?.error}`)
+  }
+  finally {
+    setSubmitting(false)
+  }
 
 }
 
@@ -40,24 +61,47 @@ function submitFn(values){
 
     return(
     <Formik initialValues={initialValues} validationSchema={MySchema} onSubmit={submitFn}> 
-      {()=>(
+      {(formik)=>(
         <RegForm id="regForm" action="#" method="get">
         <h1>° Registration Form °</h1><br />
+        {error && <h3 className='text-red-400'>{error}</h3>}
+        {message && <h3 className='text-green-600'>{message}</h3>}
+        {/* UserName */}
         <InputWrapper
                type="text"
                name="username"
                placeholder="Enter you username..."
+        />
+        <ErrorMessage name="username"/>
+        {/* FirstName */}
+        <InputWrapper
+               type="text"
+               name="firstName"
+               placeholder="Enter your firstname..."
+        />
+        <ErrorMessage name="firstName"/>
+        {/* LastName */}
+        <InputWrapper
+               type="text"
+               name="lastName"
+               placeholder="Enter your lastname..."
+        />
+        <ErrorMessage name="lastName"/>
+        {/* Date Of Birth */}
+        <InputWrapper
+                type="date"
+                name="dateOfBirth"
+        />
+        <ErrorMessage name="dateOfBirth"/>
 
-        / >
-      <ErrorMessage name="username"/>
-    
+        {/* Email */}
         <InputWrapper 
           name="email" 
           type="email" 
           placeholder="Enter your email..." 
         />
       <ErrorMessage name="email"/>
-
+        {/* Password */}
         <InputWrapper
           type="password"
           name="password"
@@ -67,7 +111,7 @@ function submitFn(values){
           required=""
         />
       <ErrorMessage name="password"/>
-
+        {/* Confirm Password */}
         <InputWrapper
           type="password"
           name="confirmPassword"
@@ -76,18 +120,10 @@ function submitFn(values){
           placeholder="Confirm your password..."
           required=""
         />
-      <ErrorMessage name="confirmPassword"/>
-
-        <InputWrapper
-          type="tel"
-          name="telephone"
-          placeholder="Enter your phone number..."
-          pattern="(00|\+)[\d]{7,12}"
-        />
-      <ErrorMessage name="telephone"/>
+        <ErrorMessage name="confirmPassword"/>
 
         <Fieldset>
-       
+
         <CheckboxLabel
           whileHover={{backgroundColor:MyLabel.hoverColor}}
             htmlFor="acceptTerms"
@@ -105,25 +141,24 @@ function submitFn(values){
     
         </Fieldset>
     
-        <SubmitBtn
-            type="submit">Create Account</SubmitBtn>
+        <SubmitBtn type="submit" disabled={formik.isSubmitting}>Create Account</SubmitBtn>
     
         <br />
     
         <h4>Already have an account?</h4>
-        <a href="#" style={{
+        <Link to='/login' style={{
           color: 'white',
           margin: '2px 2px',
           padding: '.2em .8em',
           boxShadow: '2px 2px 7px rgba(0 0 0 /.5)',
           border: '1px solid #ddd',
           borderRadius: '7px'
-          }} >Login</a>
+          }} >Login</Link>
       </RegForm>
 
       )}
   
-</ Formik>
+  </ Formik>
 
     )
 }

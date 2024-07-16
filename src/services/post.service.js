@@ -1,5 +1,5 @@
 import axios from "axios";
-import { POSTS_ENDPOINT, POSTS_URL } from "../constants/constants";
+import { POSTS_ENDPOINT, POSTS_URL } from "../config/constants";
 import useFetch from "../hooks/useFetch";
 
 export function usePosts(){
