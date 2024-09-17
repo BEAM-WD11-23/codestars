@@ -1,9 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import 'tailwindcss/tailwind.css';
-import { createPost } from '../../services/post.service';
-import { UserContext } from '../../contexts/user.context';
 
 // Define the validation schema using Yup
 const validationSchema = Yup.object().shape({
@@ -23,7 +21,6 @@ const validationSchema = Yup.object().shape({
 )
 
 const NewPostForm = () => {
-    const { loggedinUser } = useContext(UserContext)
     const [postSaved, setPostSaved] = useState(false)
     const [saveError, setSaveError] = useState(null)
     // Define initial form values
@@ -31,30 +28,12 @@ const NewPostForm = () => {
         title: '',
         images: '',
         content: '',
-        uid: loggedinUser.uid
     };
 
   // Handle form submission
   const onSubmit = (values, { setSubmitting, resetForm }) => {
-    console.log('Form data', values);
-    setTimeout(() => {
-        // Simulate submitting to a server
-        console.log(JSON.stringify(values, null, 2));
-        
-        createPost({...values, images:(values.images?[values.images]:[])})
-        .then(success => {
-            setPostSaved(true)
-            setSaveError(null)
-            resetForm();
-        })
-        .catch(error => {
-            setPostSaved(false)
-            setSaveError(error.message)
-        })
-
-        setSubmitting(false);
-    }, 400);
-  };
+    const newValues = {...values, values:[values.images]}
+  }
 
   return (
     <div>

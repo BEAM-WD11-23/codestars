@@ -1,9 +1,14 @@
 import Header from '/src/components/header/Header.jsx'
 import Postcard from '../../components/postcard/Postcard.jsx'
 import "/src/pages/profile/Profile.css"
+import { usePosts } from '../../services/post.service.js'
+import Spinner from '../../components/spinner/Spinner.jsx'
+import PostError from '../../components/postError/PostError.jsx'
 
 
 function Profile() {
+  const { isPending, posts, errors, refresh } = usePosts()
+
   return (
     <>
       <Header/>
@@ -37,8 +42,11 @@ function Profile() {
 
       </div>
       
-      <Postcard/>
-      <Postcard/>
+        {
+          isPending ? <Spinner size='2.5em' color='gray' /> :
+          posts ? posts.map((post, index) => <Postcard post={post} key={index} />) :
+          errors && <PostError errors={errors} />
+        }
     
     </>
   )
